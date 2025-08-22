@@ -113,6 +113,13 @@ nav.navbar {
     .top-title {
         display: none; /* Hide the top title on mobile for a cleaner look */
     }
+
+    /* FIX: Make featured property images responsive on mobile */
+    .featured-card img {
+        width: 100%;
+        max-height: 180px; /* Adjust this value as needed */
+        object-fit: cover;
+    }
 }
 
 /* Hero Section */
