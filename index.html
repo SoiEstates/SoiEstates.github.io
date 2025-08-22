@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +6,8 @@
     <title>Home - SOI Estates</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS for the new homepage sections */
+        /* CSS from your original file, now in a single place */
         .hero-section {
-            /* Now using your specific image file name */
             background: url('d3510b3036d9e358c793fbcd48e86516.jpg') no-repeat center center/cover;
             color: #fff;
             padding: 100px 20px;
@@ -28,7 +26,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* The new navy blue gradient effect */
             background-image: linear-gradient(to bottom, rgba(2, 28, 59, 0.5), rgba(0, 0, 0, 0.7)); 
             z-index: 1;
         }
@@ -63,7 +60,6 @@
             text-align: center;
         }
         
-        /* New CSS for the added sections */
         .services-section, .why-us-section {
             padding: 60px 20px;
             text-align: center;
@@ -106,7 +102,6 @@
             font-size: 0.9em;
         }
         
-        /* New styling for the detailed about section */
         .about-content-container {
             display: flex;
             flex-direction: row;
@@ -121,8 +116,7 @@
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            /* Styling to make the logo look good in the container */
-            max-height: 200px; /* Limits the height of the logo */
+            max-height: 200px;
             object-fit: contain;
         }
 
@@ -204,10 +198,15 @@
     <div class="top-title">SOI Estates</div>
 
     <header>
-        <nav>
+        <nav class="navbar">
             <a href="index.html" class="logo">
                 <img src="Soiestates.png" alt="SOI Estates Logo">
             </a>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -219,7 +218,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
                 <h1>Your Future Awaits</h1>
@@ -228,7 +226,6 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
         <section class="content-section about-section">
             <h2>About SOI Estates</h2>
             <div class="about-content-container">
@@ -241,7 +238,6 @@
             </div>
         </section>
 
-        <!-- Featured Properties Section -->
         <section class="content-section featured-properties-section">
             <h2>Featured Properties</h2>
             <div class="featured-properties-grid">
@@ -272,7 +268,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section class="content-section services-section">
             <h2>Our Services</h2>
             <div class="services-grid">
@@ -295,7 +290,6 @@
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
         <section class="content-section why-us-section">
             <h2>Why Choose Us</h2>
             <div class="why-us-grid">
@@ -319,5 +313,15 @@
         <p>&copy; 2025 SOI Estates. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
