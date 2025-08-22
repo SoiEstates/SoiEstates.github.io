@@ -4,7 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Reach - SOI Estates</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- This links to your existing style.css file for consistent styling -->
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Additional styling specific to this page can go here if needed */
+        .global-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .global-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .global-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .global-card h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .global-card p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* Ensure the main content has some padding on smaller screens */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Styling for the new section from the screenshot */
+        .list-card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .list-card {
+            background: #fcfcfc;
+            padding: 1.5rem;
+            border-left: 5px solid #3498db;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .list-card h3 {
+            color: #2c3e50;
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+        .list-card p {
+            margin: 0.5rem 0 0;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,35 +94,25 @@
     </header>
 
     <main>
-        <section class="content-section">
-            <h2>Our Global Reach</h2>
-            <div class="why-us-grid">
-                <div class="why-us-card">
-                    <h4>Local Expertise</h4>
-                    <p>With deep roots in the community, our team has unparalleled knowledge of the local market, ensuring you get the best value.</p>
+        <div class="content-section">
+            <h2>Our Global Reach & Expertise</h2>
+            <p>Choosing a real estate partner is a crucial decision. At SOI Estates, we stand out by offering a unique blend of experience, professionalism, and client dedication that is unmatched in the industry. Our local legacy is the foundation for our future global success. Here's why we are the right choice for you:</p>
+
+            <div class="list-card-container">
+                <div class="list-card">
+                    <h3>20+ Years of Legacy</h3>
+                    <p>Our deep-rooted presence in the industry gives us unparalleled experience. We have an established network and a track record of successful transactions across India, which serves as a strong foundation for our international expansion.</p>
                 </div>
-                <div class="why-us-card">
-                    <h4>Client-Centric Approach</h4>
-                    <p>Your goals are our priority. We take the time to understand your unique needs and tailor our services accordingly.</p>
+                <div class="list-card">
+                    <h3>Corporate-Grade Professionalism</h3>
+                    <p>We operate with a high level of transparency and integrity, adhering to global standards. Our processes are clean, structured, and designed to provide a hassle-free experience for our clients, whether they are buying in Ludhiana or looking for opportunities abroad.</p>
                 </div>
-                <div class="why-us-card">
-                    <h4>Integrity & Transparency</h4>
-                    <p>We believe in honest and open communication. Our processes are designed to be fully transparent, building trust with every transaction.</p>
-                </div>
-                <div class="why-us-card">
-                    <h4>Innovative Technology</h4>
-                    <p>We leverage cutting-edge technology and digital tools to market properties effectively and provide a seamless client experience.</p>
-                </div>
-                <div class="why-us-card">
-                    <h4>Proven Track Record</h4>
-                    <p>With a history of successful deals and satisfied clients, our reputation speaks for itself. We deliver results you can count on.</p>
-                </div>
-                <div class="why-us-card">
-                    <h4>Global Network</h4>
-                    <p>While we are local experts, our network extends globally, connecting you with a wider range of opportunities and buyers.</p>
+                <div class="list-card">
+                    <h3>Strong Local & Global Network</h3>
+                    <p>We possess an in-depth understanding of the local real estate landscape in Ludhiana and other key growth corridors in India. Simultaneously, we are building a robust network with international partners to help our clients explore global opportunities with confidence.</p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
