@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - SOI Estates</title>
+    <title>Contact - SOI Estates</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <nav>
+        <nav class="navbar">
             <a href="index.html" class="logo">
-                <img src="SoiEstates.png" alt="SOI Estates Logo">
+                <img src="Soiestates.png" alt="SOI Estates Logo">
             </a>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -24,59 +28,29 @@
     </header>
 
     <main>
-        <section class="content-section">
+        <section class="content-section contact-page-section">
             <h2>Contact Us</h2>
-            <p>We are here to assist you with all your real estate needs, wherever you are. Feel free to reach out to us directly or fill out the form below. Your success is our priority.</p>
-            
             <div class="contact-container">
-                <div class="contact-details">
-                    <h3>Office Details</h3>
-                    <p><strong>Office:</strong> Mahaveer Jain Colony Part-1, Near Sai Mandir, Hambran Road, Ludhiana</p>
-                    <p><strong>Mobile:</strong> +91-98147-60177</p>
-                    <p><strong>Email:</strong> soiestates@gmail.com</p>
-                    <hr>
-                    <h3>Individual Contacts</h3>
-                    <div class="individual">
-                        <h4>Parveen Soi</h4>
-                        <p><strong>Designation:</strong> Founder</p>
-                        <p><strong>Mobile:</strong> +91-98146-50177</p>
-                    </div>
-                    <div class="individual">
-                        <h4>Sameer Soi</h4>
-                        <p><strong>Designation:</strong> Director</p>
-                        <p><strong>Mobile:</strong> +91-98551-20177</p>
-                    </div>
-                    <div class="individual">
-                        <h4>Dinesh Thukral</h4>
-                        <p><strong>Designation:</strong> Director</p>
-                        <p><strong>Mobile:</strong> +91-98145-62387</p>
-                    </div>
-                    <div class="individual">
-                        <h4>Rohan Soi</h4>
-                        <p><strong>Designation:</strong> Director</p>
-                        <p><strong>Mobile:</strong> +91-78146-32298</p>
-                    </div>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>We are here to help you with all your real estate needs. Feel free to reach out to us through any of the channels below.</p>
+                    <p><strong>Address:</strong> 123 Real Estate Avenue, City, State, 12345</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Email:</strong> info@soiestates.com</p>
                 </div>
-                
                 <div class="contact-form-container">
-                    <h3>Request a Consultation</h3>
-                    <form action="#" method="post">
-                        <label for="name">Name</label>
+                    <h3>Send us a message</h3>
+                    <form class="contact-form">
+                        <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
                         
-                        <label for="email">Email</label>
+                        <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
                         
-                        <label for="phone">Mobile Number</label>
-                        <input type="tel" id="phone" name="phone">
-
-                        <label for="country">Country</label>
-                        <input type="text" id="country" name="country" placeholder="e.g., India, USA, Canada">
-                        
-                        <label for="message">Message</label>
+                        <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                         
-                        <button type="submit" class="cta-button">Send Message</button>
+                        <button type="submit" class="submit-button">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -86,5 +60,16 @@
     <footer>
         <p>&copy; 2025 SOI Estates. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
