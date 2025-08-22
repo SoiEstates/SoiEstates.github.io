@@ -4,147 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - SOI Estates</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .service-card {
-            background-color: #f9f9f9;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-            position: relative;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        .service-card h3 {
-            margin-top: 0;
-            color: #2c3e50; /* Darker blue for a professional look */
-            font-size: 1.5em;
-        }
-        .service-card p {
-            color: #7f8c8d; /* A more subtle gray for text */
-            font-size: 1em;
-            line-height: 1.6;
-        }
-        .service-icon {
-            display: block;
-            margin-bottom: 20px;
-            width: 40px;
-            height: 40px;
-            fill: #3498db; /* A vibrant blue for the icon color */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="SoiEstates.png" alt="SOI Estates Logo">
-                <span class="logo-text">SOI Estates</span>
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo section -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="SoiEstates.png" alt="SOI Estates Logo" class="h-8 w-8 rounded-full">
+                <span class="text-xl font-bold text-gray-900">SOI Estates</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="properties.html">Properties</a></li>
-                <li><a href="why-us.html">Global Reach</a></li>
-                <li><a href="contact.html">Contact</a></li>
+
+            <!-- Hamburger menu for mobile -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation links -->
+            <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none transition-transform duration-300 transform -translate-y-full md:translate-y-0">
+                <li class="p-4 md:p-0">
+                    <a href="index.html" class="block md:inline-block text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                </li>
+                <li class="p-4 md:p-0">
+                    <a href="services.html" class="block md:inline-block text-blue-600 font-semibold hover:text-blue-600 transition duration-300">Services</a>
+                </li>
+                <li class="p-4 md:p-0">
+                    <a href="properties.html" class="block md:inline-block text-gray-600 hover:text-blue-600 transition duration-300">Properties</a>
+                </li>
+                <li class="p-4 md:p-0">
+                    <a href="why-us.html" class="block md:inline-block text-gray-600 hover:text-blue-600 transition duration-300">Global Reach</a>
+                </li>
+                <li class="p-4 md:p-0">
+                    <a href="contact.html" class="block md:inline-block text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="content-section">
-            <h2>Our Comprehensive Services</h2>
-            <p>At SOI Estates, we offer a full spectrum of real estate services tailored to meet the needs of every client, from individuals to large corporations. Our expert team provides end-to-end support for all your property needs.</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Comprehensive Services</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">At SOI Estates, we offer a full spectrum of real estate services tailored to meet the needs of every client, from individuals to large corporations. Our expert team provides end-to-end support for all your property needs.</p>
+        </section>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Service Card 1: Property Buying Assistance -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Property Buying -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.236l7.74 3.87L12 11.236 4.26 8.106l7.74-3.87zM4 10.392l6 3v6.392l-6-3V10.392zm8 9.5l-6-3V10.392l6 3v6.5z"/>
                     </svg>
-                    <h3>1. Property Buying Assistance</h3>
-                    <p>Helping clients find the perfect residential, commercial, or industrial property.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">1. Property Buying Assistance</h3>
+                <p class="text-gray-600">Helping clients find the perfect residential, commercial, or industrial property.</p>
+            </div>
+
+            <!-- Service Card 2: Property Selling Support -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Property Selling -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 17h-2v-4h-2v4h-2v-4h-2v4h-2v-4h-2v4h-2v-4h-2v4H2c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2zM4 19H2v-2h2v2zm4 0H6v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zM12 10L6.5 6 12 2l5.5 4L12 10z"/>
                     </svg>
-                    <h3>2. Property Selling Support</h3>
-                    <p>Marketing and showcasing your property to the right buyers for the best deal.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2. Property Selling Support</h3>
+                <p class="text-gray-600">Marketing and showcasing your property to the right buyers for the best deal.</p>
+            </div>
+            
+            <!-- Service Card 3: Investment Consultation -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Investment Consultation -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11 15h2v2h-2zm0-4h2v2h-2zm0-4h2v2h-2zM4 2v20h16V2H4zm2 2h12v16H6V4zm2 2v2h8V6H8zm0 4v2h8v-2H8zm0 4v2h8v-2H8z"/>
                     </svg>
-                    <h3>3. Investment Consultation</h3>
-                    <p>Guiding investors to make profitable property investments with expert market insights.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">3. Investment Consultation</h3>
+                <p class="text-gray-600">Guiding investors to make profitable property investments with expert market insights.</p>
+            </div>
+
+            <!-- Service Card 4: Leasing & Renting Solutions -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Leasing & Renting -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.91V16h-2v3.91c-3.7-.3-6.6-3.21-6.91-6.91H8v-2H5.09c.3-3.7 3.21-6.6 6.91-6.91V8h2V5.09c3.7.3 6.6 3.21 6.91 6.91H16v2h2.91c-.3 3.7-3.21 6.6-6.91 6.91z"/>
                     </svg>
-                    <h3>4. Leasing & Renting Solutions</h3>
-                    <p>Assisting landlords and tenants in finding the right match quickly and smoothly.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">4. Leasing & Renting Solutions</h3>
+                <p class="text-gray-600">Assisting landlords and tenants in finding the right match quickly and smoothly.</p>
+            </div>
+            
+            <!-- Service Card 5: Land Development Advisory -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Land Development -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17 12h-2V7h-2v5H9V7H7v5H5V7H3v7h16v-2zm-2 0h2v2h-2zm-4 0h2v2h-2zM7 12h2v2h-2zm0-4V5H5v3h2zM9 5v2h2V5H9zm2-2v2h2V3h-2zm-2 0V1H7v2h2zm-2 0h-2v2h2V3z"/>
                     </svg>
-                    <h3>5. Land Development Advisory</h3>
-                    <p>Consulting for plot development, layout planning, and project approvals.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">5. Land Development Advisory</h3>
+                <p class="text-gray-600">Consulting for plot development, layout planning, and project approvals.</p>
+            </div>
+
+            <!-- Service Card 6: Legal & Documentation Support -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Legal & Documentation -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 2.5L17.5 9H13V4.5zM6 20V4h6v6h6v10H6zM8 12h8v2H8zm0 4h8v2H8z"/>
                     </svg>
-                    <h3>6. Legal & Documentation Support</h3>
-                    <p>Assisting with all necessary paperwork, registrations, and property documentation.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">6. Legal & Documentation Support</h3>
+                <p class="text-gray-600">Assisting with all necessary paperwork, registrations, and property documentation.</p>
+            </div>
+
+            <!-- Service Card 7: Corporate Real Estate Services -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Corporate Real Estate -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0v10H4V6h16zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
                     </svg>
-                    <h3>7. Corporate Real Estate Services</h3>
-                    <p>Providing solutions for companies seeking office spaces, warehouses, or industrial land.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">7. Corporate Real Estate Services</h3>
+                <p class="text-gray-600">Providing solutions for companies seeking office spaces, warehouses, or industrial land.</p>
+            </div>
+            
+            <!-- Service Card 8: Property Valuation & Market Analysis -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Property Valuation -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 6c-1.1 0-2 .9-2 2v8h2V8h2V6h-2zm-2-2c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-2zM4 14c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2H4zM6 16v2H4v-2h2zm4-4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2h-2zm2 6h-2v-4h2v4zM16 8c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2h-2zm2 8h-2v-6h2v6z"/>
                     </svg>
-                    <h3>8. Property Valuation & Market Analysis</h3>
-                    <p>Offering accurate property valuation to help you make informed decisions.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">8. Property Valuation & Market Analysis</h3>
+                <p class="text-gray-600">Offering accurate property valuation to help you make informed decisions.</p>
+            </div>
+
+            <!-- Service Card 9: Customized Property Search -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for Customized Search -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 3.87-.96l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                     </svg>
-                    <h3>9. Customized Property Search</h3>
-                    <p>Personalized service to meet your exact requirements and budget.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">9. Customized Property Search</h3>
+                <p class="text-gray-600">Personalized service to meet your exact requirements and budget.</p>
+            </div>
+            
+            <!-- Service Card 10: End-to-End Transaction Management -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                    <!-- SVG Icon for End-to-End Management -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 11c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm6 0c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zm-9 0c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zm18-3v8H6V8h15zM4 6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18V6H4z"/>
                     </svg>
-                    <h3>10. End-to-End Transaction Management</h3>
-                    <p>Managing the entire process from start to finish for a hassle-free experience.</p>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">10. End-to-End Transaction Management</h3>
+                <p class="text-gray-600">Managing the entire process from start to finish for a hassle-free experience.</p>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 SOI Estates. All rights reserved.</p>
+    <footer class="bg-white shadow-inner mt-8">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2025 SOI Estates. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script>
+        // JavaScript to toggle the mobile menu
+        const menuButton = document.getElementById('menu-button');
+        const navLinks = document.getElementById('nav-links');
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('-translate-y-full');
+            navLinks.classList.toggle('translate-y-0');
+        });
+    </script>
 </body>
 </html>
