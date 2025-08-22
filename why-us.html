@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Reach - SOI Estates</title>
+    <!-- This links to your existing style.css file for consistent styling -->
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Additional styling specific to this page can go here if needed */
+        .global-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .global-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .global-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .global-card h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .global-card p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* Ensure the main content has some padding on smaller screens */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Styling for the new section from the screenshot */
+        .list-card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .list-card {
+            background: #fcfcfc;
+            padding: 1.5rem;
+            border-left: 5px solid #3498db;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .list-card h3 {
+            color: #2c3e50;
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+        .list-card p {
+            margin: 0.5rem 0 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="SoiEstates.png" alt="SOI Estates Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="why-us.html" class="active">Global Reach</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-section">
+            <h2>Our Global Reach & Expertise</h2>
+            <p>Choosing a real estate partner is a crucial decision. At SOI Estates, we stand out by offering a unique blend of experience, professionalism, and client dedication that is unmatched in the industry. Our local legacy is the foundation for our future global success. Here's why we are the right choice for you:</p>
+
+            <div class="list-card-container">
+                <div class="list-card">
+                    <h3>20+ Years of Legacy</h3>
+                    <p>Our deep-rooted presence in the industry gives us unparalleled experience. We have an established network and a track record of successful transactions across India, which serves as a strong foundation for our international expansion.</p>
+                </div>
+                <div class="list-card">
+                    <h3>Corporate-Grade Professionalism</h3>
+                    <p>We operate with a high level of transparency and integrity, adhering to global standards. Our processes are clean, structured, and designed to provide a hassle-free experience for our clients, whether they are buying in Ludhiana or looking for opportunities abroad.</p>
+                </div>
+                <div class="list-card">
+                    <h3>Strong Local & Global Network</h3>
+                    <p>We possess an in-depth understanding of the local real estate landscape in Ludhiana and other key growth corridors in India. Simultaneously, we are building a robust network with international partners to help our clients explore global opportunities with confidence.</p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SOI Estates. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
