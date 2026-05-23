@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — SOI Estates</title>
+  <meta name="description" content="SOI Estates offers residential, commercial, industrial, agricultural, rental and investment property services across Pan India."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    .service-card { background:#fff; border:1px solid rgba(0,0,0,.07); padding:2rem 1.5rem; cursor:pointer; position:relative; overflow:hidden; transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease; }
+    .service-card::before { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#B8860B,#D4A017); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
+    .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,.1); border-color:rgba(184,134,11,.3); }
+    .service-card:hover::before { transform:scaleX(1); }
+    .service-icon { font-size:2.4rem; margin-bottom:1rem; display:block; }
+    .service-card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; color:#1F2937; margin-bottom:.5rem; }
+    .service-card p { font-size:.8rem; line-height:1.7; color:#6B7280; margin-bottom:1rem; }
+    .card-cta { font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:#B8860B; font-weight:500; display:flex; align-items:center; gap:.4rem; transition:gap .25s; }
+    .service-card:hover .card-cta { gap:.8rem; }
+
+    .modal-overlay { position:fixed; inset:0; z-index:1000; background:rgba(17,24,39,.75); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .35s ease; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:#fff; max-width:780px; width:100%; max-height:88vh; overflow-y:auto; position:relative; transform:translateY(30px) scale(.97); transition:transform .35s ease; border-radius:2px; }
+    .modal-overlay.open .modal { transform:none; }
+    .modal-hero { position:relative; height:200px; overflow:hidden; }
+    .modal-hero-img { width:100%; height:100%; object-fit:cover; }
+    .modal-hero-ov { position:absolute; inset:0; background:linear-gradient(to top,rgba(17,24,39,.88) 0%,rgba(17,24,39,.2) 100%); }
+    .modal-close { position:absolute; top:1rem; right:1rem; width:36px; height:36px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:#fff; font-size:1.1rem; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:10; transition:background .2s; }
+    .modal-close:hover { background:rgba(255,255,255,.3); }
+    .modal-hero-content { position:absolute; bottom:1.5rem; left:2rem; display:flex; align-items:center; gap:1rem; }
+    .modal-hero-icon { font-size:2.4rem; background:rgba(255,255,255,.12); width:58px; height:58px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.2); }
+    .modal-hero-title { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:400; color:#fff; }
+    .modal-hero-sub { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:#D4A017; margin-top:.2rem; }
+    .modal-body { padding:2rem; }
+    .modal-desc { font-size:.88rem; line-height:1.9; color:#4B5563; margin-bottom:1.8rem; padding-bottom:1.8rem; border-bottom:1px solid rgba(0,0,0,.07); }
+    .modal-highlight { background:#111827; padding:1.3rem 1.6rem; margin-bottom:1.8rem; display:flex; gap:1rem; align-items:flex-start; }
+    .modal-highlight-icon { font-size:1.6rem; flex-shrink:0; margin-top:.1rem; }
+    .modal-highlight-text { font-size:.82rem; line-height:1.75; color:rgba(255,255,255,.65); font-style:italic; }
+    .modal-sections { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:1.8rem; }
+    .modal-section-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; color:#1F2937; margin-bottom:1rem; padding-bottom:.5rem; border-bottom:1.5px solid #B8860B; display:inline-block; }
+    .modal-list { list-style:none; display:flex; flex-direction:column; gap:.55rem; }
+    .modal-list li { font-size:.81rem; color:#4B5563; display:flex; align-items:flex-start; gap:.6rem; line-height:1.55; }
+    .modal-list li::before { content:'✦'; color:#B8860B; font-size:.52rem; flex-shrink:0; margin-top:.3rem; }
+    .modal-tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.8rem; }
+    .modal-tag { font-size:.63rem; letter-spacing:.12em; text-transform:uppercase; padding:.32rem .85rem; background:rgba(184,134,11,.08); border:1px solid rgba(184,134,11,.25); color:#B8860B; }
+    .modal-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn-wa { display:inline-flex; align-items:center; gap:.6rem; font-family:'DM Sans',sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; padding:.85rem 2rem; background:#25D366; color:#fff; border:none; cursor:pointer; transition:background .3s; text-decoration:none; }
+    .btn-wa:hover { background:#1da851; }
+    .why-banner { background:#111827; padding:3.5rem 2rem; text-align:center; }
+    .why-banner p { font-size:.88rem; color:rgba(255,255,255,.5); max-width:580px; margin:.8rem auto 1.8rem; line-height:1.8; }
+    @media(max-width:1024px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:600px){ .services-grid{grid-template-columns:1fr;} .modal-sections{grid-template-columns:1fr;} .modal-hero-title{font-size:1.3rem;} }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/919855120177" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.859L.057 23.428a.75.75 0 00.921.921l5.684-1.47A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.95-1.355l-.355-.212-3.676.95.977-3.574-.232-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="Soiestates.png" alt="SOI Estates Logo"/></a>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-tag">What We Do</div>
+    <h1>Our <em>Services</em></h1>
+    <p>Click any property category below to learn everything about it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div style="text-align:center;max-width:580px;margin:0 auto 3rem;">
+    <div class="section-tag" style="justify-content:center;">Pan India Coverage</div>
+    <h2>We Deal in <em>All Kinds</em><br>of Properties</h2>
+    <p>Tap any category to see full details, what's included, benefits, and how we help you.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal" onclick="openModal('residential')">
+      <span class="service-icon">🏠</span>
+      <h3>Residential Properties</h3>
+      <p>Homes, villas, flats & apartments for individuals and families across India.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('commercial')">
+      <span class="service-icon">🏢</span>
+      <h3>Commercial Properties</h3>
+      <p>Offices, retail spaces, showrooms and commercial plots for businesses.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('industrial')">
+      <span class="service-icon">🏭</span>
+      <h3>Industrial Properties</h3>
+      <p>Factories, warehouses, sheds and manufacturing units across Pan India.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('plots')">
+      <span class="service-icon">🗺️</span>
+      <h3>Plots & Land</h3>
+      <p>Residential and commercial plots in prime locations for construction or investment.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('agricultural')">
+      <span class="service-icon">🌾</span>
+      <h3>Agricultural Land</h3>
+      <p>Farm land, land banks and agricultural parcels across Punjab and Pan India.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('investment')">
+      <span class="service-icon">📈</span>
+      <h3>Investment Properties</h3>
+      <p>High-return investment opportunities in residential, commercial and land assets.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('rental')">
+      <span class="service-icon">🔑</span>
+      <h3>Rental Properties</h3>
+      <p>Residential and commercial properties available on rent or long-term lease.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+    <div class="service-card reveal" onclick="openModal('bank')">
+      <span class="service-icon">🏦</span>
+      <h3>Bank & Corporate Spaces</h3>
+      <p>Dedicated solutions for banks, NBFCs and corporations seeking strategic locations.</p>
+      <div class="card-cta">Learn More →</div>
+    </div>
+  </div>
+</section>
+
+<div class="why-banner reveal">
+  <div class="section-tag" style="color:#D4A017;justify-content:center;">30+ Years of Expertise</div>
+  <h2 style="color:#fff;font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;margin-bottom:0;">Not Sure Which Category Fits You?</h2>
+  <p>Just call or WhatsApp us — we will understand your need and guide you to the right property type.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="https://wa.me/919855120177" target="_blank" class="btn-primary">WhatsApp Us Now</a>
+    <a href="contact.html" class="btn-outline">Send an Enquiry</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Soiestates.png" alt="SOI Estates" class="footer-logo"/>
+      <p>Helping you find the right property every time!</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/soirealestates/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61579648694526" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.linkedin.com/company/soi-estates/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://youtube.com/@sameersoi_ldh" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-links-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact-col">
+      <h4>Contact Us</h4>
+      <p>📞 <a href="tel:+919855120177">+91 98551 20177</a></p>
+      <p>✉️ <a href="mailto:soiestatesldh@gmail.com">soiestatesldh@gmail.com</a></p>
+      <p>📍 Mahaveer Jain Colony Part-1,<br>Near Sai Mandir, Hambran Road,<br>Ludhiana, Punjab</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 SOI Estates. All Rights Reserved. | Ludhiana, Punjab, India</p></div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-hero">
+      <img class="modal-hero-img" id="modalImg" src="" alt=""/>
+      <div class="modal-hero-ov"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-hero-content">
+        <div class="modal-hero-icon" id="modalIcon"></div>
+        <div>
+          <div class="modal-hero-title" id="modalTitle"></div>
+          <div class="modal-hero-sub" id="modalSub"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-highlight">
+        <div class="modal-highlight-icon" id="modalHIcon"></div>
+        <div class="modal-highlight-text" id="modalHText"></div>
+      </div>
+      <div class="modal-sections">
+        <div>
+          <div class="modal-section-title">What We Offer</div>
+          <ul class="modal-list" id="modalOffer"></ul>
+        </div>
+        <div>
+          <div class="modal-section-title">Key Benefits</div>
+          <ul class="modal-list" id="modalBenefits"></ul>
+        </div>
+      </div>
+      <div class="modal-tags" id="modalTags"></div>
+      <div class="modal-cta">
+        <a href="https://wa.me/919855120177" target="_blank" class="btn-wa">💬 WhatsApp Us</a>
+        <a href="contact.html" class="btn-primary">Send Enquiry →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+const propertyData = {
+  residential: {
+    icon:'🏠', title:'Residential Properties', sub:'Homes · Villas · Flats · Apartments',
+    img:'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80',
+    desc:'Whether you are buying your first home, upgrading to a larger residence, or searching for a premium villa — SOI Estates has been helping families find their dream homes across Punjab and Pan India since 1992. We understand that a home is not just a property; it is where memories are made and futures are built. Our team works closely with you to find properties that match your lifestyle, budget, and long-term goals.',
+    highlight:{icon:'🏡', text:'"We have helped over 1,000 families find their perfect home across Ludhiana, Punjab and beyond. Every home search begins with listening to what matters most to you."'},
+    offer:['Independent houses & bungalows','Builder floor apartments','2BHK, 3BHK & 4BHK flats','Premium villas & luxury residences','Affordable housing options','Ready-to-move & under-construction','Gated community projects','Senior citizen friendly homes'],
+    benefits:['30+ years of trusted market knowledge','Access to off-market listings','Complete legal documentation support','Home loan assistance & bank tie-ups','Site visits at your convenience','Negotiation support for best price','Post-purchase documentation help','Transparent, zero hidden charges'],
+    tags:['Ludhiana','Punjab','Pan India','Ready to Move','Under Construction','Affordable','Luxury','Gated Community']
+  },
+  commercial: {
+    icon:'🏢', title:'Commercial Properties', sub:'Offices · Retail · Showrooms · Commercial Plots',
+    img:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80',
+    desc:'Finding the right commercial space can define the success of your business. SOI Estates specialises in connecting businesses — from startups to large enterprises — with commercial properties that offer the right footfall, infrastructure, and location advantage. Whether you need a small office in Ludhiana or a large showroom in a high-street location, we find the right fit for your business vision.',
+    highlight:{icon:'📊', text:'"Location is everything in commercial real estate. Our deep knowledge of Ludhiana\'s commercial corridors and Pan India markets helps you set up where your business will truly thrive."'},
+    offer:['Office spaces (small to large)','Retail shops & high-street outlets','Showrooms in prime locations','Commercial plots for development','SCOs (Shop-cum-Office)','Food & beverage spaces','Clinic & hospital spaces','Co-working & shared office spaces'],
+    benefits:['Prime location identification','High footfall area analysis','Long-term lease negotiation','Commercial zoning verification','Vaastu & layout consultation','Fit-out & renovation guidance','Multiple location options','Dedicated commercial property expert'],
+    tags:['Ludhiana','High Street','Office Space','SCO','Retail','Showroom','Commercial Plot','Pan India']
+  },
+  industrial: {
+    icon:'🏭', title:'Industrial Properties', sub:'Factories · Warehouses · Sheds · Manufacturing Units',
+    img:'https://images.unsplash.com/photo-1565793979559-1a00aed4dd2c?w=900&q=80',
+    desc:'SOI Estates has extensive experience in sourcing industrial properties that meet the specific operational, logistical, and compliance requirements of manufacturing and distribution businesses. From small production sheds to large integrated manufacturing plants, we identify properties with the right power load, road connectivity, water supply, and zoning approvals — so your business operations run without hindrance.',
+    highlight:{icon:'⚙️', text:'"Industrial properties require more than just four walls. We verify power load capacity, road access, government approvals and zoning compliance before presenting any option to our clients."'},
+    offer:['Factories & manufacturing plants','Warehouses & logistics hubs','Industrial sheds (small to large)','Cold storage facilities','Industrial plots in approved zones','Pre-leased industrial assets','Integrated industrial parks','Export-oriented units (EOUs)'],
+    benefits:['Government-approved industrial zones','Road & highway connectivity check','Power load & utility verification','HSIIDC / PSIEC allotted land options','Labour availability area analysis','Fire & safety compliance guidance','Lease vs buy analysis','Long-term industrial lease support'],
+    tags:['Ludhiana','Focal Point','Industrial Area','Warehouse','Factory','HSIIDC','Pan India','Logistics']
+  },
+  plots: {
+    icon:'🗺️', title:'Plots & Land', sub:'Residential Plots · Commercial Plots · Land for Development',
+    img:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80',
+    desc:'Plots and land remain one of the most trusted forms of real estate investment in India. Whether you want to build your dream home on your own terms, develop a commercial project, or simply invest in land that will appreciate over time — SOI Estates offers a wide range of verified and clear-title plots across Ludhiana, Punjab and Pan India. We ensure every plot comes with proper legal verification and layout approval.',
+    highlight:{icon:'📍', text:'"Land never lies. A well-chosen plot in the right location can multiply in value many times over the years. We help you identify where to buy before the rest of the market catches up."'},
+    offer:['Residential plots in approved colonies','Commercial plots on main roads','Large land parcels for developers','DTCP / RERA approved plots','Corner plots & main road facing plots','Gated colony plots','Plots near upcoming infrastructure','Agricultural to residential conversion plots'],
+    benefits:['Clear title & registry verification','DTCP / authority approval check','Demarcation & boundary verification','No encumbrance certificate support','Guidance on registry & stamp duty','Future development potential analysis','Neighbourhood growth assessment','End-to-end transaction support'],
+    tags:['Ludhiana','Residential Plot','Commercial Plot','DTCP Approved','Corner Plot','Investment','Self Construction','Pan India']
+  },
+  agricultural: {
+    icon:'🌾', title:'Agricultural Land', sub:'Farm Land · Land Banks · Agri Investment',
+    img:'https://images.unsplash.com/photo-1500076656116-558758c991c1?w=900&q=80',
+    desc:'Agricultural land in Punjab is among the most fertile and valuable in all of India. SOI Estates helps buyers, investors, and developers identify and acquire agricultural land with clean titles, proper land records, and growth potential. We assist with both productive farm land for active cultivation and strategic land bank acquisitions for future development — all with full legal transparency.',
+    highlight:{icon:'🌱', text:'"Punjab\'s agricultural land is a long-term asset of immense value. Whether for farming, land banking, or future development — the right agricultural land can be your most rewarding investment."'},
+    offer:['Productive farm land for cultivation','Land bank acquisitions for investors','Orchard & fruit farm land','Poultry & dairy farm land','Land near upcoming highways','Agricultural land for residential conversion','Large acreage for developers','Gram panchayat land assistance'],
+    benefits:['Jamabandi & land record verification','Ownership & mutation check','Encumbrance & mortgage clearance','Guidance on land conversion rules','Agricultural loan assistance','Water availability assessment','Access road & connectivity check','Future development potential analysis'],
+    tags:['Punjab','Ludhiana','Farm Land','Land Bank','Fertile Land','Investment','Future Development','Agri Loan']
+  },
+  investment: {
+    icon:'📈', title:'Investment Properties', sub:'High ROI · Capital Appreciation · Rental Yield',
+    img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80',
+    desc:'Real estate remains India\'s most trusted wealth-building asset. SOI Estates helps investors — from first-time buyers to seasoned HNIs — identify properties with the strongest return potential. Whether your goal is monthly rental income, long-term capital appreciation, or both, we analyse the market and present only the most financially sound investment opportunities aligned to your risk appetite and timeline.',
+    highlight:{icon:'💰', text:'"The right property at the right price in the right location is not luck — it is expertise. In 30+ years, we have helped our clients build lasting wealth through strategic real estate investment."'},
+    offer:['Pre-launch project investments','Under-construction flats for appreciation','Pre-leased commercial properties','High-rental-yield residential units','Industrial assets with locked-in tenants','Land banking opportunities','NRI investment advisory','Portfolio diversification through real estate'],
+    benefits:['ROI analysis before every recommendation','Rental yield projections','Developer credibility verification','Market timing & entry point advice','Tax saving through real estate','Home loan & interest rate guidance','Exit strategy planning','Long-term portfolio review'],
+    tags:['High ROI','Rental Yield','Capital Appreciation','Pre-Launch','Pre-Leased','NRI Investment','Land Bank','Ludhiana']
+  },
+  rental: {
+    icon:'🔑', title:'Rental Properties', sub:'Residential Rent · Commercial Lease · Long-Term Rental',
+    img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80',
+    desc:'Finding a reliable tenant or a trustworthy landlord can be stressful. SOI Estates simplifies rental transactions for both sides. For tenants, we find properties matching your exact space, budget, and location requirements quickly and transparently. For landlords, we identify verified, reliable tenants and handle the agreement process professionally, ensuring your property is in safe hands.',
+    highlight:{icon:'🤝', text:'"A good rental agreement protects both the landlord and the tenant. We draft clear, legally sound rental agreements and ensure both parties understand their rights and responsibilities fully."'},
+    offer:['Residential flats & houses on rent','Commercial office & shop rentals','Furnished & semi-furnished options','Long-term lease agreements','Month-to-month flexible rentals','Tenant background verification','Rental agreement drafting','Property management for landlords'],
+    benefits:['Fast property matching — within days','Verified tenant profiles','Market-rate rental assessment','Legal rental agreement drafting','Security deposit guidance','GST registration for commercial leases','Renewal & exit clause support','Post-rental dispute assistance'],
+    tags:['Ludhiana','Residential Rental','Commercial Lease','Furnished','Long-Term','Verified Tenants','Agreement','Pan India']
+  },
+  bank: {
+    icon:'🏦', title:'Bank & Corporate Spaces', sub:'Bank Branches · ATMs · Corporate Offices · MNC Campuses',
+    img:'https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=900&q=80',
+    desc:'Banks, NBFCs, insurance companies, and multinational corporations have unique requirements — ground floor visibility, specific square footage, power backup, parking, and regulatory compliance. SOI Estates has a proven track record of sourcing and delivering such specialised commercial spaces across Ludhiana and Pan India for leading financial institutions and corporate clients.',
+    highlight:{icon:'🏛️', text:'"Banks and corporates cannot afford to be in the wrong location. We have successfully placed multiple banks, ATMs and corporate offices in high-footfall, regulation-compliant locations across Punjab."'},
+    offer:['Bank branch spaces (ground floor)','ATM kiosk locations','NBFC & insurance office spaces','Corporate headquarters setups','Regional & zonal office spaces','Back-office & BPO spaces','Training & conference centres','Data centre & server room spaces'],
+    benefits:['High-footfall location identification','Regulatory & RBI guideline compliance','Fire NOC & structural safety check','Dedicated corporate leasing team','Long-term lease negotiation','Custom fit-out coordination','Multiple city shortlisting','Pan India network coverage'],
+    tags:['Bank Branch','ATM','Corporate Office','NBFC','Insurance','MNC','Ground Floor','Pan India']
+  }
+};
+
+function openModal(key) {
+  const d = propertyData[key];
+  if (!d) return;
+  document.getElementById('modalImg').src = d.img;
+  document.getElementById('modalImg').alt = d.title;
+  document.getElementById('modalIcon').textContent = d.icon;
+  document.getElementById('modalTitle').textContent = d.title;
+  document.getElementById('modalSub').textContent = d.sub;
+  document.getElementById('modalDesc').textContent = d.desc;
+  document.getElementById('modalHIcon').textContent = d.highlight.icon;
+  document.getElementById('modalHText').textContent = d.highlight.text;
+  document.getElementById('modalOffer').innerHTML = d.offer.map(i=>`<li>${i}</li>`).join('');
+  document.getElementById('modalBenefits').innerHTML = d.benefits.map(i=>`<li>${i}</li>`).join('');
+  document.getElementById('modalTags').innerHTML = d.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('modalBox').scrollTop = 0;
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+</script>
+</body>
+</html>

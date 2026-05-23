@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why SOI Estates — The Honest Choice in Real Estate</title>
+  <meta name="description" content="Why thousands trust SOI Estates — independent, no builder tie-ups, only completed properties, 30+ years of legacy in Ludhiana."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .why-hero-section { background:#0d1117; padding:5rem 2rem 4rem; }
+    .why-big-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1200px; margin:3rem auto 0; }
+    .why-big-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); padding:2.2rem 1.8rem; transition:border-color .3s,background .3s; }
+    .why-big-card:hover { border-color:rgba(212,160,23,.5); background:rgba(255,255,255,.05); }
+    .why-big-icon { font-size:2.2rem; margin-bottom:1.2rem; display:block; }
+    .why-big-card h3 { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:400; color:#fff; margin-bottom:.7rem; }
+    .why-big-card p { font-size:.8rem; line-height:1.85; color:rgba(255,255,255,.5); }
+
+    .promise-section { padding:5rem 2rem; background:#fafaf7; }
+    .promise-list { max-width:900px; margin:3rem auto 0; display:flex; flex-direction:column; gap:0; }
+    .promise-row { display:grid; grid-template-columns:80px 1fr; gap:2rem; align-items:start; padding:2.5rem 0; border-bottom:1px solid rgba(0,0,0,.07); }
+    .promise-row:last-child { border-bottom:none; }
+    .promise-num { font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:#B8860B; opacity:.25; line-height:1; }
+    .promise-content h3 { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:400; color:#1F2937; margin-bottom:.6rem; }
+    .promise-content p { font-size:.84rem; line-height:1.9; color:#6B7280; }
+
+    .compare-section { padding:5rem 2rem; background:#111827; }
+    .compare-table { max-width:900px; margin:3rem auto 0; }
+    .compare-header { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:rgba(255,255,255,.08); margin-bottom:1px; }
+    .compare-header > div { padding:1rem 1.5rem; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; font-weight:600; }
+    .compare-header > div:first-child { color:rgba(255,255,255,.3); background:#111827; }
+    .compare-header > div:nth-child(2) { color:#D4A017; background:#1a1f2e; text-align:center; border:1px solid rgba(212,160,23,.3); }
+    .compare-header > div:last-child { color:rgba(255,255,255,.3); background:#111827; text-align:center; }
+    .compare-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:rgba(255,255,255,.05); margin-bottom:1px; }
+    .compare-row > div { padding:.9rem 1.5rem; font-size:.8rem; background:#111827; }
+    .compare-row > div:first-child { color:rgba(255,255,255,.6); }
+    .compare-row > div:nth-child(2) { color:#D4A017; text-align:center; background:#141921; font-weight:500; border-left:1px solid rgba(212,160,23,.2); border-right:1px solid rgba(212,160,23,.2); }
+    .compare-row > div:last-child { color:rgba(255,255,255,.35); text-align:center; }
+
+    .faq-section { padding:5rem 2rem; }
+    .faq-list { max-width:800px; margin:3rem auto 0; display:flex; flex-direction:column; gap:.8rem; }
+    .faq-item { border:1px solid rgba(0,0,0,.08); overflow:hidden; }
+    .faq-q { padding:1.2rem 1.5rem; font-size:.9rem; font-weight:500; color:#1F2937; cursor:pointer; display:flex; justify-content:space-between; align-items:center; user-select:none; transition:background .2s; }
+    .faq-q:hover { background:#f8f6f1; }
+    .faq-q .faq-arrow { font-size:.7rem; color:#B8860B; transition:transform .3s; flex-shrink:0; }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease, padding .3s; }
+    .faq-a-inner { padding:0 1.5rem 1.2rem; font-size:.84rem; line-height:1.85; color:#6B7280; }
+    .faq-item.open .faq-a { max-height:300px; }
+    .faq-item.open .faq-arrow { transform:rotate(180deg); }
+
+    @media(max-width:1024px){ .why-big-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:600px){ .why-big-grid{grid-template-columns:1fr;} .promise-row{grid-template-columns:1fr;gap:.5rem;} .compare-section{overflow-x:auto;} }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/919855120177" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.859L.057 23.428a.75.75 0 00.921.921l5.684-1.47A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.95-1.355l-.355-.212-3.676.95.977-3.574-.232-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="Soiestates.png" alt="SOI Estates"/></a>
+    <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="why-us.html" class="active">Why Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-tag">The Honest Choice</div>
+    <h1>Why Choose <em>SOI Estates</em></h1>
+    <p>30+ years of independent, unbiased real estate expertise — and a promise no builder can make you.</p>
+  </div>
+</section>
+
+<!-- 6 BIG REASONS -->
+<section class="why-hero-section">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;">
+    <div class="section-tag" style="color:#D4A017;justify-content:center;">6 Reasons That Make Us Different</div>
+    <h2 style="color:#fff;">No One Else Can Make <em>These Promises</em></h2>
+  </div>
+  <div class="why-big-grid">
+    <div class="why-big-card reveal">
+      <span class="why-big-icon">🚫</span>
+      <h3>Zero Builder Tie-Ups. Ever.</h3>
+      <p>We have never taken a single rupee from a builder as incentive or commission. We do not push inventories. We do not have quarterly targets with developers. Our only motivation is finding you the right property — full stop.</p>
+    </div>
+    <div class="why-big-card reveal">
+      <span class="why-big-icon">✅</span>
+      <h3>Only Completed Properties</h3>
+      <p>We categorically refuse to deal in under-construction projects. Every property we represent is physically complete, you can walk through it, and possession can happen on the day of registration. No "2 years delivery" promises here.</p>
+    </div>
+    <div class="why-big-card reveal">
+      <span class="why-big-icon">📋</span>
+      <h3>No Unauthorised Properties</h3>
+      <p>We run a strict legal check on every property. If a property has any regulatory issue — pending approvals, encumbrances, disputes, or unclear title — it never reaches our clients. Your safety is non-negotiable.</p>
+    </div>
+    <div class="why-big-card reveal">
+      <span class="why-big-icon">🤝</span>
+      <h3>We Serve Companies — Not For Them</h3>
+      <p>When a large corporation needs a warehouse or a bank needs a branch location, we find it for them. But we never list their projects or sell their inventory to individual buyers. Our independence is our greatest asset.</p>
+    </div>
+    <div class="why-big-card reveal">
+      <span class="why-big-icon">🏛️</span>
+      <h3>1992 Legacy — Not a Startup</h3>
+      <p>We have been doing this for over 30 years. We have seen the Ludhiana real estate market evolve through every economic cycle. That experience cannot be replicated by any new agency or online portal.</p>
+    </div>
+    <div class="why-big-card reveal">
+      <span class="why-big-icon">👤</span>
+      <h3>Real People. Real Answers.</h3>
+      <p>No bots, no call centres, no "our agent will call you back." When you contact SOI Estates, you speak with a real person who knows your case and gives you a real answer, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROMISES -->
+<section class="promise-section">
+  <div style="text-align:center;max-width:1200px;margin:0 auto;">
+    <div class="section-tag reveal" style="justify-content:center;">Our Non-Negotiables</div>
+    <h2 class="reveal">Promises We Keep <em>Every Single Time</em></h2>
+  </div>
+  <div class="promise-list">
+    <div class="promise-row reveal">
+      <div class="promise-num">01</div>
+      <div class="promise-content">
+        <h3>We will never show you an incomplete property</h3>
+        <p>This is our most fundamental promise. Every property SOI Estates presents to a client is fully constructed, habitable, and ready for immediate possession. We do not believe in "trust the builder's timeline" — we believe in what you can see and touch today.</p>
+      </div>
+    </div>
+    <div class="promise-row reveal">
+      <div class="promise-num">02</div>
+      <div class="promise-content">
+        <h3>We will verify every legal document before presenting to you</h3>
+        <p>Title deed, encumbrance certificate, mutation, ownership records, society approvals, building plan sanctions — our team checks all of these before we even shortlist a property for you. You see only the clean ones.</p>
+      </div>
+    </div>
+    <div class="promise-row reveal">
+      <div class="promise-num">03</div>
+      <div class="promise-content">
+        <h3>We will never take money from builders to promote their projects</h3>
+        <p>Some agencies run on builder incentives — the more they sell a builder's flats, the more they earn. We reject this model completely. Our fee comes from genuine brokerage on honest transactions. Not from pushing someone's agenda.</p>
+      </div>
+    </div>
+    <div class="promise-row reveal">
+      <div class="promise-num">04</div>
+      <div class="promise-content">
+        <h3>We will give you honest market pricing — even if it means less for us</h3>
+        <p>We will tell you if a seller's asking price is too high. We will negotiate on your behalf, even if a lower price means a lower brokerage for us. Your financial wellbeing is more important than our short-term gain.</p>
+      </div>
+    </div>
+    <div class="promise-row reveal">
+      <div class="promise-num">05</div>
+      <div class="promise-content">
+        <h3>We will be reachable throughout your entire transaction</h3>
+        <p>From the first call to the final registration, our team is available to answer your questions, coordinate between parties, and ensure there are no surprises. We do not disappear after the deal is signed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section">
+  <div style="text-align:center;max-width:1200px;margin:0 auto;">
+    <div class="section-tag reveal" style="color:#D4A017;justify-content:center;">Honest Comparison</div>
+    <h2 style="color:#fff;" class="reveal">SOI Estates vs <em>Other Agents</em></h2>
+  </div>
+  <div class="compare-table reveal">
+    <div class="compare-header">
+      <div>What Matters</div>
+      <div>✦ SOI Estates</div>
+      <div>Typical Agent</div>
+    </div>
+    <div class="compare-row"><div>Completed Properties Only</div><div>✅ Always</div><div>❌ Often under-construction</div></div>
+    <div class="compare-row"><div>Builder Tie-ups</div><div>✅ Zero</div><div>❌ Multiple builders</div></div>
+    <div class="compare-row"><div>Legal Verification Before Showing</div><div>✅ Every Property</div><div>❌ Rarely done</div></div>
+    <div class="compare-row"><div>Owner-Listed Properties</div><div>✅ Only</div><div>❌ Mix of builder & owner</div></div>
+    <div class="compare-row"><div>Unauthorised Properties</div><div>✅ Never Listed</div><div>❌ Common practice</div></div>
+    <div class="compare-row"><div>Years of Experience</div><div>✅ 30+ Years (Est. 1992)</div><div>❌ Often 1–5 years</div></div>
+    <div class="compare-row"><div>Speak to a Real Person</div><div>✅ Always</div><div>❌ Often bots/callbacks</div></div>
+    <div class="compare-row"><div>Pan India Coverage</div><div>✅ Yes</div><div>❌ Usually local only</div></div>
+    <div class="compare-row"><div>Post-Deal Support</div><div>✅ Full Support</div><div>❌ Disappears after deal</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div style="text-align:center;max-width:800px;margin:0 auto;">
+    <div class="section-tag reveal" style="justify-content:center;">Common Questions</div>
+    <h2 class="reveal">Frequently Asked <em>Questions</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you deal in under-construction properties? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">No — never. This is one of our core principles. We only deal in properties that are fully constructed, legally approved, and ready for immediate possession and registration. We believe a buyer should be able to physically walk through the property before spending their money.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Are you tied to any builder or developer? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely not. SOI Estates is completely independent. We have zero financial relationships with builders, developers or housing companies. We do not earn builder incentives and we do not push any developer's inventory. Our only obligation is to our clients.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">How do you serve companies if you don't sell builder projects? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">We help companies and corporations find the right property — for example, helping a bank find a branch location, or helping a manufacturing company find an industrial plot. In these cases, we source the property from the actual owner and facilitate the transaction. We never turn around and sell a company's own inventory to individual buyers.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you verify the legal status of every property? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, this is a mandatory step in our process. Before any property is shortlisted or shown to a client, we check the title deed, ownership documents, encumbrance certificate, mutation status, and any applicable authority approvals. Only clean, dispute-free properties make it to our clients.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you cover locations outside Ludhiana? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. While our base is Ludhiana and we have the deepest knowledge of the Ludhiana and Punjab market, we serve clients across Pan India. We have a network of trusted contacts in major cities and can source, verify and facilitate property transactions in most parts of the country.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">What is your brokerage fee? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Our brokerage is transparent and discussed upfront before any transaction begins. There are no hidden charges, no surprise deductions, and no side-deals. What we quote is what you pay — nothing more.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:linear-gradient(135deg,#B8860B,#8B6508);padding:3.5rem 2rem;text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#fff;margin-bottom:.8rem;">Convinced? <em style="font-style:italic;">Let's Talk Property.</em></h2>
+  <p style="color:rgba(255,255,255,.8);font-size:.88rem;margin-bottom:2rem;">One honest conversation is all it takes to get started.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="https://wa.me/919855120177" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;background:#fff;color:#8B6508;border:none;cursor:pointer;font-weight:600;text-decoration:none;">💬 WhatsApp Now</a>
+    <a href="contact.html" style="display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);cursor:pointer;text-decoration:none;">✉️ Send Enquiry</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Soiestates.png" alt="SOI Estates" class="footer-logo"/>
+      <p>Helping you find the right property every time!</p>
+      <p style="margin-top:.6rem;font-size:.72rem;color:rgba(255,255,255,.35);">Independent · Honest · Est. 1992</p>
+    </div>
+    <div class="footer-links-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="why-us.html">Why SOI Estates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact-col">
+      <h4>Contact Us</h4>
+      <p>📞 <a href="tel:+919855120177">+91 98551 20177</a></p>
+      <p>💬 <a href="https://wa.me/919855120177" target="_blank">WhatsApp Us</a></p>
+      <p>✉️ <a href="mailto:soiestatesldh@gmail.com">soiestatesldh@gmail.com</a></p>
+      <p>📍 Hambran Road, Ludhiana, Punjab</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 SOI Estates. All Rights Reserved. | Ludhiana, Punjab, India</p></div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

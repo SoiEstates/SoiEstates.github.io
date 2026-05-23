@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOI Estates — Trusted Real Estate Since 1992 | Ludhiana, Punjab</title>
+  <meta name="description" content="SOI Estates — Ludhiana's most trusted independent real estate firm since 1992. We deal ONLY in completed, owner-listed, legally clear properties. No builders. No companies. Just honest deals."/>
+  <meta property="og:title" content="SOI Estates | Real Estate You Can Trust Since 1992"/>
+  <meta property="og:description" content="Helping you find the right property every time. Residential, Commercial, Industrial & Agricultural — Pan India."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* HERO */
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1800&q=85') center/cover no-repeat; }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,14,26,.92) 0%,rgba(10,14,26,.65) 60%,rgba(10,14,26,.3) 100%); }
+    .hero-content { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:0 2rem; padding-top:100px; width:100%; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:.8rem; font-size:.65rem; letter-spacing:.3em; text-transform:uppercase; color:#D4A017; margin-bottom:1.5rem; }
+    .hero-eyebrow-line { width:36px; height:1px; background:#D4A017; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,6vw,5.5rem); font-weight:400; color:#fff; line-height:1.06; margin-bottom:1.5rem; max-width:800px; }
+    .hero h1 em { font-style:italic; color:#D4A017; }
+    .hero-sub { font-size:1rem; color:rgba(255,255,255,.68); max-width:520px; line-height:1.85; margin-bottom:2.5rem; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3.5rem; }
+    .hero-trust { display:flex; gap:2.5rem; flex-wrap:wrap; padding-top:2.5rem; border-top:1px solid rgba(255,255,255,.12); }
+    .trust-item { display:flex; align-items:center; gap:.7rem; }
+    .trust-icon { font-size:1.2rem; }
+    .trust-text { font-size:.72rem; color:rgba(255,255,255,.6); line-height:1.4; }
+    .trust-text strong { display:block; color:#fff; font-size:.8rem; }
+
+    /* PROMISE BANNER */
+    .promise-banner { background:#B8860B; padding:1.2rem 2rem; text-align:center; }
+    .promise-banner p { font-size:.8rem; letter-spacing:.1em; color:#fff; font-weight:500; }
+    .promise-banner strong { font-size:.85rem; }
+
+    /* STATS BAR */
+    .stats-bar { background:#111827; display:flex; align-items:stretch; justify-content:center; flex-wrap:wrap; }
+    .stat { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2rem 3rem; text-align:center; border-right:1px solid rgba(255,255,255,.07); flex:1; min-width:150px; }
+    .stat:last-child { border-right:none; }
+    .stat-num { font-family:'Playfair Display',serif; font-size:2.2rem; color:#D4A017; font-weight:700; line-height:1; }
+    .stat-label { font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-top:.4rem; }
+
+    /* MARQUEE */
+    .marquee-wrap { overflow:hidden; background:#0d1117; padding:.9rem 0; border-top:1px solid rgba(255,255,255,.05); }
+    .marquee-track { display:flex; width:max-content; animation:marquee 30s linear infinite; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .m-item { white-space:nowrap; font-size:.6rem; letter-spacing:.25em; text-transform:uppercase; color:rgba(255,255,255,.3); padding:0 2rem; }
+    .m-item span { color:#B8860B; margin-right:2rem; }
+
+    /* INTRO */
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-visual { position:relative; }
+    .intro-main-img { width:100%; aspect-ratio:4/5; object-fit:cover; }
+    .intro-img-main { width:100%; aspect-ratio:4/5; background:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80') center/cover; }
+    .intro-badge { position:absolute; bottom:-2rem; right:-2rem; background:#111827; padding:1.5rem 2rem; border-left:3px solid #B8860B; box-shadow:0 20px 50px rgba(0,0,0,.2); }
+    .intro-badge-num { font-family:'Playfair Display',serif; font-size:2.5rem; color:#D4A017; font-weight:700; line-height:1; }
+    .intro-badge-txt { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-top:.3rem; }
+    .intro-text { padding-right:2rem; }
+    .intro-text p { margin-bottom:1.2rem; }
+    .promise-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+    .promise-item { background:#f8f6f1; padding:1rem 1.2rem; border-left:2px solid #B8860B; }
+    .promise-item-title { font-size:.72rem; font-weight:600; color:#1F2937; margin-bottom:.3rem; letter-spacing:.05em; }
+    .promise-item-desc { font-size:.75rem; color:#6B7280; line-height:1.6; }
+
+    /* NO BUILDER SECTION */
+    .no-builder { background:#0d1117; padding:5rem 2rem; }
+    .no-builder-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .no-builder h2 { color:#fff; margin-bottom:1.2rem; }
+    .no-builder h2 em { color:#D4A017; }
+    .no-builder p { color:rgba(255,255,255,.55); font-size:.88rem; line-height:1.9; margin-bottom:1.2rem; }
+    .nb-list { list-style:none; display:flex; flex-direction:column; gap:.8rem; margin-top:1.5rem; }
+    .nb-list li { display:flex; gap:1rem; align-items:flex-start; font-size:.85rem; color:rgba(255,255,255,.65); line-height:1.6; }
+    .nb-check { width:22px; height:22px; background:#B8860B; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:.7rem; color:#fff; margin-top:.1rem; }
+    .nb-cards { display:flex; flex-direction:column; gap:1rem; }
+    .nb-card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start; transition:border-color .3s; }
+    .nb-card:hover { border-color:rgba(212,160,23,.4); }
+    .nb-card-icon { font-size:1.8rem; flex-shrink:0; }
+    .nb-card-title { font-size:.8rem; font-weight:600; color:#fff; margin-bottom:.3rem; letter-spacing:.05em; }
+    .nb-card-desc { font-size:.75rem; color:rgba(255,255,255,.45); line-height:1.65; }
+
+    /* SERVICES SECTION */
+    .services-intro { text-align:center; max-width:650px; margin:0 auto 3.5rem; }
+    .services-intro .section-tag { justify-content:center; }
+    .services-intro .section-tag::before { display:none; }
+    .big-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+    .big-card { background:#fff; border:1px solid rgba(0,0,0,.07); padding:1.8rem 1.4rem; cursor:pointer; position:relative; overflow:hidden; transition:transform .3s,box-shadow .3s,border-color .3s; text-decoration:none; display:block; }
+    .big-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#B8860B,#D4A017); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+    .big-card:hover { transform:translateY(-5px); box-shadow:0 18px 45px rgba(0,0,0,.1); border-color:rgba(184,134,11,.3); }
+    .big-card:hover::after { transform:scaleX(1); }
+    .big-card-icon { font-size:2.2rem; margin-bottom:.8rem; display:block; }
+    .big-card h3 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; color:#1F2937; margin-bottom:.4rem; }
+    .big-card p { font-size:.76rem; line-height:1.7; color:#6B7280; margin-bottom:.8rem; }
+    .big-card-cta { font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:#B8860B; display:flex; align-items:center; gap:.4rem; transition:gap .25s; }
+    .big-card:hover .big-card-cta { gap:.8rem; }
+
+    /* TRUST SECTION */
+    .trust-section { background:#f8f6f1; padding:5rem 2rem; }
+    .trust-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; max-width:1200px; margin:3rem auto 0; }
+    .trust-card { background:#fff; padding:2rem; border-bottom:3px solid #B8860B; }
+    .trust-card-icon { font-size:2rem; margin-bottom:1rem; }
+    .trust-card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; color:#1F2937; margin-bottom:.6rem; }
+    .trust-card p { font-size:.8rem; line-height:1.8; color:#6B7280; }
+
+    /* PROCESS */
+    .process-section { padding:5rem 2rem; }
+    .process-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; max-width:1100px; margin:3rem auto 0; position:relative; }
+    .process-steps::before { content:''; position:absolute; top:28px; left:10%; right:10%; height:1px; background:linear-gradient(90deg,#B8860B,rgba(184,134,11,.2)); z-index:0; }
+    .process-step { text-align:center; position:relative; z-index:1; padding:0 1rem; }
+    .step-num { width:56px; height:56px; border-radius:50%; background:#fff; border:2px solid #B8860B; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#B8860B; }
+    .step-title { font-size:.75rem; font-weight:600; color:#1F2937; margin-bottom:.4rem; letter-spacing:.05em; text-transform:uppercase; }
+    .step-desc { font-size:.72rem; color:#6B7280; line-height:1.65; }
+
+    /* TESTIMONIALS */
+    .testimonials { background:#111827; padding:5rem 2rem; }
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1200px; margin:3rem auto 0; }
+    .testi-card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:2rem; }
+    .testi-stars { color:#D4A017; font-size:1rem; letter-spacing:.1rem; margin-bottom:1rem; }
+    .testi-text { font-size:.82rem; line-height:1.85; color:rgba(255,255,255,.65); font-style:italic; margin-bottom:1.2rem; }
+    .testi-author { font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:#D4A017; }
+    .testi-location { font-size:.68rem; color:rgba(255,255,255,.3); margin-top:.2rem; }
+
+    /* CTA STRIP */
+    .cta-strip { background:linear-gradient(135deg,#B8860B 0%,#8B6508 100%); padding:3.5rem 2rem; text-align:center; }
+    .cta-strip h2 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:400; color:#fff; margin-bottom:.8rem; }
+    .cta-strip h2 em { font-style:italic; }
+    .cta-strip p { color:rgba(255,255,255,.8); font-size:.88rem; margin-bottom:2rem; }
+    .cta-strip-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn-white { display:inline-flex; align-items:center; gap:.5rem; font-family:'DM Sans',sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; padding:.9rem 2rem; background:#fff; color:#8B6508; border:none; cursor:pointer; font-weight:600; transition:all .3s; text-decoration:none; }
+    .btn-white:hover { background:#fff9ee; transform:translateY(-1px); }
+    .btn-outline-white { display:inline-flex; align-items:center; gap:.5rem; font-family:'DM Sans',sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; padding:.9rem 2rem; background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6); cursor:pointer; transition:all .3s; text-decoration:none; }
+    .btn-outline-white:hover { border-color:#fff; background:rgba(255,255,255,.1); }
+
+    /* CONTACT QUICK */
+    .contact-quick { padding:5rem 2rem; background:#fafaf7; }
+    .contact-quick-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1000px; margin:3rem auto 0; }
+    .contact-quick-card { background:#fff; border:1px solid rgba(0,0,0,.07); padding:2rem; text-align:center; text-decoration:none; display:block; transition:transform .3s,box-shadow .3s; }
+    .contact-quick-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.09); }
+    .cq-icon { font-size:2.5rem; margin-bottom:1rem; display:block; }
+    .cq-title { font-family:'Playfair Display',serif; font-size:1.1rem; color:#1F2937; margin-bottom:.4rem; }
+    .cq-val { font-size:.85rem; color:#B8860B; font-weight:500; margin-bottom:.3rem; }
+    .cq-desc { font-size:.73rem; color:#6B7280; }
+
+    @media(max-width:1024px){ .big-grid{grid-template-columns:repeat(2,1fr);} .process-steps{grid-template-columns:repeat(2,1fr); gap:2rem;} .process-steps::before{display:none;} .trust-grid{grid-template-columns:1fr 1fr;} .testi-grid{grid-template-columns:1fr;} .contact-quick-grid{grid-template-columns:1fr;max-width:400px;} }
+    @media(max-width:768px){ .intro-grid{grid-template-columns:1fr;} .no-builder-inner{grid-template-columns:1fr;} .big-grid{grid-template-columns:1fr 1fr;} .trust-grid{grid-template-columns:1fr;} .promise-grid{grid-template-columns:1fr;} .intro-badge{right:0;} .intro-text{padding-right:0;} .hero-trust{gap:1.5rem;} }
+    @media(max-width:480px){ .big-grid{grid-template-columns:1fr;} .process-steps{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/919855120177" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.859L.057 23.428a.75.75 0 00.921.921l5.684-1.47A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.95-1.355l-.355-.212-3.676.95.977-3.574-.232-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="Soiestates.png" alt="SOI Estates"/></a>
+    <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow animate-up" style="animation-delay:.1s">
+      <div class="hero-eyebrow-line"></div>
+      Trusted Real Estate Since 1992 · Ludhiana, Punjab
+    </div>
+    <h1 class="animate-up" style="animation-delay:.22s">
+      We Find You the<br><em>Right Property.</em><br>Every Single Time.
+    </h1>
+    <p class="hero-sub animate-up" style="animation-delay:.36s">
+      Independent. Honest. Owner-listed properties only. No builder deals. No unfinished projects. No hidden surprises. Just real properties, ready to sell.
+    </p>
+    <div class="hero-actions animate-up" style="animation-delay:.48s">
+      <a href="https://wa.me/919855120177" target="_blank" class="btn-primary">💬 WhatsApp Now</a>
+      <a href="services.html" class="btn-outline">Explore Services</a>
+      <a href="contact.html" class="btn-outline">Contact Us</a>
+    </div>
+    <div class="hero-trust animate-up" style="animation-delay:.6s">
+      <div class="trust-item">
+        <div class="trust-icon">✅</div>
+        <div class="trust-text"><strong>Completed Properties Only</strong>No under-construction deals ever</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤝</div>
+        <div class="trust-text"><strong>Owner-Listed Only</strong>Direct from owner, not builders</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📜</div>
+        <div class="trust-text"><strong>100% Legal & Clear</strong>Registry verified every time</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏛️</div>
+        <div class="trust-text"><strong>30+ Years Legacy</strong>Est. 1992, Ludhiana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE BANNER -->
+<div class="promise-banner">
+  <p>⚡ <strong>Our Promise:</strong> We ONLY deal in completed, legally clear, owner-listed properties. We are fully independent — not tied to any builder, developer or real estate company.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Years of Trust</div></div>
+  <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Families Served</div></div>
+  <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Property Types</div></div>
+  <div class="stat"><div class="stat-num">Pan India</div><div class="stat-label">Coverage</div></div>
+  <div class="stat"><div class="stat-num">0</div><div class="stat-label">Builder Tie-ups</div></div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="m-item"><span>✦</span> Residential</div><div class="m-item"><span>✦</span> Commercial</div><div class="m-item"><span>✦</span> Industrial</div><div class="m-item"><span>✦</span> Agricultural Land</div><div class="m-item"><span>✦</span> Plots & Land</div><div class="m-item"><span>✦</span> Investment</div><div class="m-item"><span>✦</span> Rental</div><div class="m-item"><span>✦</span> Bank Spaces</div><div class="m-item"><span>✦</span> Ludhiana</div><div class="m-item"><span>✦</span> Pan India</div>
+    <div class="m-item"><span>✦</span> Residential</div><div class="m-item"><span>✦</span> Commercial</div><div class="m-item"><span>✦</span> Industrial</div><div class="m-item"><span>✦</span> Agricultural Land</div><div class="m-item"><span>✦</span> Plots & Land</div><div class="m-item"><span>✦</span> Investment</div><div class="m-item"><span>✦</span> Rental</div><div class="m-item"><span>✦</span> Bank Spaces</div><div class="m-item"><span>✦</span> Ludhiana</div><div class="m-item"><span>✦</span> Pan India</div>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section class="section">
+  <div class="intro-grid">
+    <div class="intro-visual reveal">
+      <div class="intro-img-main"></div>
+      <div class="intro-badge">
+        <div class="intro-badge-num">1992</div>
+        <div class="intro-badge-txt">Year Established</div>
+      </div>
+    </div>
+    <div class="intro-text reveal">
+      <div class="section-tag">Our Story</div>
+      <h2>Three Decades of<br><em>Honest Real Estate</em></h2>
+      <p>SOI Estates was born in Ludhiana in 1992 with a simple but powerful belief — that every person deserves to find the right property without confusion, pressure, or hidden agendas.</p>
+      <p>For over 30 years, we have operated as a fully independent firm. We are not tied to any builder, developer, or real estate corporation. We work for you — the client — and we work with you — businesses and corporations — when they need real property solutions.</p>
+      <p>Our core strength is our people, our local knowledge, and our unbreakable commitment to dealing only in properties that are completed, legally clear, and ready to be sold by the actual owner.</p>
+      <div class="promise-grid">
+        <div class="promise-item">
+          <div class="promise-item-title">✅ Completed Properties Only</div>
+          <div class="promise-item-desc">We never deal in under-construction or unauthorised properties — ever.</div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-item-title">🏠 Owner-Listed Only</div>
+          <div class="promise-item-desc">Every property we represent comes directly from the owner, not from any builder's inventory.</div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-item-title">📜 Legal Clarity Guaranteed</div>
+          <div class="promise-item-desc">Clear title, registry verified, no encumbrances — before we present it to you.</div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-item-title">🤝 Truly Independent</div>
+          <div class="promise-item-desc">We serve companies and corporates, but we never sell under any company's banner.</div>
+        </div>
+      </div>
+      <a href="about.html" class="link-arrow" style="margin-top:2rem;">Read Our Full Story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NO BUILDER SECTION -->
+<div class="no-builder">
+  <div class="no-builder-inner">
+    <div class="reveal">
+      <div class="section-tag" style="color:#D4A017;">Our Biggest Strength</div>
+      <h2>We Do NOT Work<br><em>Under Any Builder</em><br>or Developer</h2>
+      <p>This is what makes SOI Estates rare in today's market. While most agents push builder inventories for commissions, we have always stayed independent — working solely in the interest of our clients.</p>
+      <p>We serve companies when they need property — providing them with the right land, space, or office — but we will never list or sell a company's under-construction or unauthorised project to our clients.</p>
+      <ul class="nb-list">
+        <li><div class="nb-check">✓</div>Only completed, habitable, ready-to-register properties</li>
+        <li><div class="nb-check">✓</div>Only properties where the owner has clear legal title</li>
+        <li><div class="nb-check">✓</div>No builder incentives, no developer commissions, no bias</li>
+        <li><div class="nb-check">✓</div>We help companies find property — but never sell their projects</li>
+        <li><div class="nb-check">✓</div>Every deal goes through our verification checklist first</li>
+      </ul>
+    </div>
+    <div class="nb-cards reveal">
+      <div class="nb-card">
+        <div class="nb-card-icon">🚫</div>
+        <div>
+          <div class="nb-card-title">No Under-Construction Deals</div>
+          <div class="nb-card-desc">We will never ask you to buy a property that is not physically complete and ready for possession today.</div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-card-icon">📋</div>
+        <div>
+          <div class="nb-card-title">No Unauthorised Properties</div>
+          <div class="nb-card-desc">Every property must have valid approvals, clear registry and no legal disputes before we list it.</div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-card-icon">🏢</div>
+        <div>
+          <div class="nb-card-title">We Serve Companies — Not Sell For Them</div>
+          <div class="nb-card-desc">We help corporations find the right space. But we do not push their projects to our buyers. Our loyalty is to you.</div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-card-icon">🔍</div>
+        <div>
+          <div class="nb-card-title">Full Verification Before Presentation</div>
+          <div class="nb-card-desc">Title check, encumbrance certificate, mutation, zoning approvals — all verified before you see a property.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="services-intro reveal">
+    <div class="section-tag">What We Handle</div>
+    <h2>Every Type of Property.<br><em>Any Location in India.</em></h2>
+    <p>Click any category to learn everything about it — what's included, what we offer, and how we help you.</p>
+  </div>
+  <div class="big-grid">
+    <a href="services.html#residential" class="big-card reveal">
+      <span class="big-card-icon">🏠</span>
+      <h3>Residential</h3>
+      <p>Homes, villas, builder floors & flats — for families and individuals across India.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#commercial" class="big-card reveal">
+      <span class="big-card-icon">🏢</span>
+      <h3>Commercial</h3>
+      <p>Offices, shops, showrooms and SCOs in prime high-footfall locations.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#industrial" class="big-card reveal">
+      <span class="big-card-icon">🏭</span>
+      <h3>Industrial</h3>
+      <p>Factories, warehouses and sheds in approved industrial zones, Pan India.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#plots" class="big-card reveal">
+      <span class="big-card-icon">🗺️</span>
+      <h3>Plots & Land</h3>
+      <p>DTCP-approved residential and commercial plots for construction or investment.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#agricultural" class="big-card reveal">
+      <span class="big-card-icon">🌾</span>
+      <h3>Agricultural Land</h3>
+      <p>Punjab's finest farm land and land banks with clean Jamabandi records.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#investment" class="big-card reveal">
+      <span class="big-card-icon">📈</span>
+      <h3>Investment</h3>
+      <p>High-ROI opportunities — pre-leased assets, high-yield rentals and land banking.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#rental" class="big-card reveal">
+      <span class="big-card-icon">🔑</span>
+      <h3>Rental & Lease</h3>
+      <p>Residential and commercial rentals — for tenants and landlords both.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+    <a href="services.html#bank" class="big-card reveal">
+      <span class="big-card-icon">🏦</span>
+      <h3>Bank & Corporate</h3>
+      <p>Ground-floor branch spaces, ATM kiosks and corporate offices for institutions.</p>
+      <div class="big-card-cta">Explore →</div>
+    </a>
+  </div>
+</section>
+
+<!-- WHY TRUST US -->
+<section class="trust-section">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag reveal" style="justify-content:center;">Why 1000+ Clients Trust Us</div>
+    <h2 class="reveal">Reasons to Choose <em>SOI Estates</em></h2>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card reveal">
+      <div class="trust-card-icon">🏛️</div>
+      <h3>30+ Years of Legacy</h3>
+      <p>Founded in 1992, SOI Estates has survived and thrived through every real estate cycle in India — recessions, booms, policy changes and all. Our legacy speaks louder than any advertisement.</p>
+    </div>
+    <div class="trust-card reveal">
+      <div class="trust-card-icon">⚖️</div>
+      <h3>Legal First, Always</h3>
+      <p>Before we present any property to you, we run a full legal check — title verification, encumbrance certificate, mutation status, approval status. You never walk into a legal surprise with us.</p>
+    </div>
+    <div class="trust-card reveal">
+      <div class="trust-card-icon">🚫</div>
+      <h3>No Builder Bias</h3>
+      <p>We have zero financial relationships with builders or developers. We do not earn incentives from them. Our income comes from serving you well — not from pushing someone's project inventory.</p>
+    </div>
+    <div class="trust-card reveal">
+      <div class="trust-card-icon">📍</div>
+      <h3>Deep Local Knowledge</h3>
+      <p>30+ years in Ludhiana means we know every colony, every street, every upcoming development, and every area's true market price — knowledge that no outsider or online portal can give you.</p>
+    </div>
+    <div class="trust-card reveal">
+      <div class="trust-card-icon">🌍</div>
+      <h3>Pan India Reach</h3>
+      <p>While our roots are in Ludhiana, our network covers all of India. Whether you need a warehouse in Mumbai or a farm in Haryana — we have the contacts and the knowledge to serve you.</p>
+    </div>
+    <div class="trust-card reveal">
+      <div class="trust-card-icon">💬</div>
+      <h3>Always Reachable</h3>
+      <p>No automated systems. No call centres. When you reach out to SOI Estates, you talk to a real person who knows your file and can answer your questions immediately — every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process-section" style="background:#fafaf7;">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag reveal" style="justify-content:center;">Our Process</div>
+    <h2 class="reveal">How We Work — <em>Step by Step</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+      <div class="step-title">You Contact Us</div>
+      <div class="step-desc">Call, WhatsApp or email us with your requirement — property type, budget, location.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">02</div>
+      <div class="step-title">We Listen</div>
+      <div class="step-desc">We spend time understanding your exact need, priorities, and long-term goals.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">03</div>
+      <div class="step-title">We Search & Verify</div>
+      <div class="step-desc">We search our network, verify legality, and shortlist only the best-matched options.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">04</div>
+      <div class="step-title">Site Visits</div>
+      <div class="step-desc">We arrange site visits at your convenience and guide you through each property.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">05</div>
+      <div class="step-title">Deal & Done</div>
+      <div class="step-desc">We negotiate the best price and support you through the full registration process.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag reveal" style="color:#D4A017;justify-content:center;">Client Stories</div>
+    <h2 style="color:#fff;" class="reveal">What Our Clients <em>Say</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"SOI Estates found us a beautiful home in Ludhiana that was legally completely clear and ready to move in. They never pushed us — they listened to what we wanted and delivered exactly that. No pressure, no hidden charges."</div>
+      <div class="testi-author">Rajinder Singh Bhatia</div>
+      <div class="testi-location">Purchased Residential Home, Model Town, Ludhiana</div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"We were looking for a commercial space for our showroom. SOI Estates showed us only ready, approved properties — no under-construction promises. We found the perfect space within 3 weeks. Highly recommend."</div>
+      <div class="testi-author">Gurpreet Kaur Malhotra</div>
+      <div class="testi-location">Commercial Showroom, GT Road, Ludhiana</div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"I was based in Delhi and needed agricultural land in Punjab for investment. SOI Estates handled everything remotely — legal verification, site visits on my behalf, Jamabandi check — and delivered a clean deal. Outstanding."</div>
+      <div class="testi-author">Arun Kapoor</div>
+      <div class="testi-location">Agricultural Land Investment, Punjab</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Ready to Find Your <em>Right Property?</em></h2>
+  <p>Call us, WhatsApp us, or visit our Ludhiana office. One conversation is all it takes to get started.</p>
+  <div class="cta-strip-actions">
+    <a href="https://wa.me/919855120177" target="_blank" class="btn-white">💬 WhatsApp: +91 98551 20177</a>
+    <a href="tel:+919855120177" class="btn-outline-white">📞 Call Now</a>
+    <a href="contact.html" class="btn-outline-white">✉️ Send Enquiry</a>
+  </div>
+</div>
+
+<!-- CONTACT QUICK -->
+<section class="contact-quick">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag reveal" style="justify-content:center;">Reach Us Instantly</div>
+    <h2 class="reveal">Three Ways to <em>Connect</em></h2>
+  </div>
+  <div class="contact-quick-grid">
+    <a href="https://wa.me/919855120177" target="_blank" class="contact-quick-card reveal">
+      <span class="cq-icon">💬</span>
+      <div class="cq-title">WhatsApp</div>
+      <div class="cq-val">+91 98551 20177</div>
+      <div class="cq-desc">Chat with us anytime — fastest response</div>
+    </a>
+    <a href="tel:+919855120177" class="contact-quick-card reveal">
+      <span class="cq-icon">📞</span>
+      <div class="cq-title">Call Us</div>
+      <div class="cq-val">+91 98551 20177</div>
+      <div class="cq-desc">Speak directly with our team</div>
+    </a>
+    <a href="mailto:soiestatesldh@gmail.com" class="contact-quick-card reveal">
+      <span class="cq-icon">✉️</span>
+      <div class="cq-title">Email Us</div>
+      <div class="cq-val">soiestatesldh@gmail.com</div>
+      <div class="cq-desc">Send your requirement in detail</div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Soiestates.png" alt="SOI Estates" class="footer-logo"/>
+      <p>Helping you find the right property every time!</p>
+      <p style="margin-top:.6rem;font-size:.72rem;color:rgba(255,255,255,.35);">Independent · Honest · Est. 1992</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/soirealestates/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61579648694526" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.linkedin.com/company/soi-estates/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://youtube.com/@sameersoi_ldh" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-links-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="why-us.html">Why SOI Estates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Residential</a></li>
+        <li><a href="services.html">Commercial</a></li>
+        <li><a href="services.html">Industrial</a></li>
+        <li><a href="services.html">Plots & Land</a></li>
+        <li><a href="services.html">Agricultural</a></li>
+        <li><a href="services.html">Investment</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact-col">
+      <h4>Contact Us</h4>
+      <p>📞 <a href="tel:+919855120177">+91 98551 20177</a></p>
+      <p>💬 <a href="https://wa.me/919855120177" target="_blank">WhatsApp Us</a></p>
+      <p>✉️ <a href="mailto:soiestatesldh@gmail.com">soiestatesldh@gmail.com</a></p>
+      <p>📍 Mahaveer Jain Colony Part-1,<br>Near Sai Mandir, Hambran Road,<br>Ludhiana, Punjab</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SOI Estates. All Rights Reserved. | Ludhiana, Punjab, India | Independent Real Estate Since 1992</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
