@@ -59,15 +59,16 @@
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.859L.057 23.428a.75.75 0 00.921.921l5.684-1.47A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.95-1.355l-.355-.212-3.676.95.977-3.574-.232-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
 
+<div class="nav-overlay" id="navOverlay"></div>
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="Soiestates.png" alt="SOI Estates Logo"/></a>
-    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </div>
 </nav>
@@ -166,7 +167,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-contact-col">
@@ -224,7 +225,7 @@
 const propertyData = {
   residential: {
     icon:'🏠', title:'Residential Properties', sub:'Homes · Villas · Flats · Apartments',
-    img:'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80',
+    img:'images.jpg',
     desc:'Whether you are buying your first home, upgrading to a larger residence, or searching for a premium villa — SOI Estates has been helping families find their dream homes across Punjab and Pan India since 1992. We understand that a home is not just a property; it is where memories are made and futures are built. Our team works closely with you to find properties that match your lifestyle, budget, and long-term goals.',
     highlight:{icon:'🏡', text:'"We have helped over 1,000 families find their perfect home across Ludhiana, Punjab and beyond. Every home search begins with listening to what matters most to you."'},
     offer:['Independent houses & bungalows','Builder floor apartments','2BHK, 3BHK & 4BHK flats','Premium villas & luxury residences','Affordable housing options','Ready-to-move & under-construction','Gated community projects','Senior citizen friendly homes'],
@@ -233,7 +234,7 @@ const propertyData = {
   },
   commercial: {
     icon:'🏢', title:'Commercial Properties', sub:'Offices · Retail · Showrooms · Commercial Plots',
-    img:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80',
+    img:'images.jpg',
     desc:'Finding the right commercial space can define the success of your business. SOI Estates specialises in connecting businesses — from startups to large enterprises — with commercial properties that offer the right footfall, infrastructure, and location advantage. Whether you need a small office in Ludhiana or a large showroom in a high-street location, we find the right fit for your business vision.',
     highlight:{icon:'📊', text:'"Location is everything in commercial real estate. Our deep knowledge of Ludhiana\'s commercial corridors and Pan India markets helps you set up where your business will truly thrive."'},
     offer:['Office spaces (small to large)','Retail shops & high-street outlets','Showrooms in prime locations','Commercial plots for development','SCOs (Shop-cum-Office)','Food & beverage spaces','Clinic & hospital spaces','Co-working & shared office spaces'],
@@ -242,7 +243,7 @@ const propertyData = {
   },
   industrial: {
     icon:'🏭', title:'Industrial Properties', sub:'Factories · Warehouses · Sheds · Manufacturing Units',
-    img:'https://images.unsplash.com/photo-1565793979559-1a00aed4dd2c?w=900&q=80',
+    img:'images.jpg',
     desc:'SOI Estates has extensive experience in sourcing industrial properties that meet the specific operational, logistical, and compliance requirements of manufacturing and distribution businesses. From small production sheds to large integrated manufacturing plants, we identify properties with the right power load, road connectivity, water supply, and zoning approvals — so your business operations run without hindrance.',
     highlight:{icon:'⚙️', text:'"Industrial properties require more than just four walls. We verify power load capacity, road access, government approvals and zoning compliance before presenting any option to our clients."'},
     offer:['Factories & manufacturing plants','Warehouses & logistics hubs','Industrial sheds (small to large)','Cold storage facilities','Industrial plots in approved zones','Pre-leased industrial assets','Integrated industrial parks','Export-oriented units (EOUs)'],
@@ -251,7 +252,7 @@ const propertyData = {
   },
   plots: {
     icon:'🗺️', title:'Plots & Land', sub:'Residential Plots · Commercial Plots · Land for Development',
-    img:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80',
+    img:'images.jpg',
     desc:'Plots and land remain one of the most trusted forms of real estate investment in India. Whether you want to build your dream home on your own terms, develop a commercial project, or simply invest in land that will appreciate over time — SOI Estates offers a wide range of verified and clear-title plots across Ludhiana, Punjab and Pan India. We ensure every plot comes with proper legal verification and layout approval.',
     highlight:{icon:'📍', text:'"Land never lies. A well-chosen plot in the right location can multiply in value many times over the years. We help you identify where to buy before the rest of the market catches up."'},
     offer:['Residential plots in approved colonies','Commercial plots on main roads','Large land parcels for developers','DTCP / RERA approved plots','Corner plots & main road facing plots','Gated colony plots','Plots near upcoming infrastructure','Agricultural to residential conversion plots'],
@@ -260,7 +261,7 @@ const propertyData = {
   },
   agricultural: {
     icon:'🌾', title:'Agricultural Land', sub:'Farm Land · Land Banks · Agri Investment',
-    img:'https://images.unsplash.com/photo-1500076656116-558758c991c1?w=900&q=80',
+    img:'images.jpg',
     desc:'Agricultural land in Punjab is among the most fertile and valuable in all of India. SOI Estates helps buyers, investors, and developers identify and acquire agricultural land with clean titles, proper land records, and growth potential. We assist with both productive farm land for active cultivation and strategic land bank acquisitions for future development — all with full legal transparency.',
     highlight:{icon:'🌱', text:'"Punjab\'s agricultural land is a long-term asset of immense value. Whether for farming, land banking, or future development — the right agricultural land can be your most rewarding investment."'},
     offer:['Productive farm land for cultivation','Land bank acquisitions for investors','Orchard & fruit farm land','Poultry & dairy farm land','Land near upcoming highways','Agricultural land for residential conversion','Large acreage for developers','Gram panchayat land assistance'],
@@ -269,7 +270,7 @@ const propertyData = {
   },
   investment: {
     icon:'📈', title:'Investment Properties', sub:'High ROI · Capital Appreciation · Rental Yield',
-    img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80',
+    img:'images.jpg',
     desc:'Real estate remains India\'s most trusted wealth-building asset. SOI Estates helps investors — from first-time buyers to seasoned HNIs — identify properties with the strongest return potential. Whether your goal is monthly rental income, long-term capital appreciation, or both, we analyse the market and present only the most financially sound investment opportunities aligned to your risk appetite and timeline.',
     highlight:{icon:'💰', text:'"The right property at the right price in the right location is not luck — it is expertise. In 30+ years, we have helped our clients build lasting wealth through strategic real estate investment."'},
     offer:['Pre-launch project investments','Under-construction flats for appreciation','Pre-leased commercial properties','High-rental-yield residential units','Industrial assets with locked-in tenants','Land banking opportunities','NRI investment advisory','Portfolio diversification through real estate'],
@@ -278,7 +279,7 @@ const propertyData = {
   },
   rental: {
     icon:'🔑', title:'Rental Properties', sub:'Residential Rent · Commercial Lease · Long-Term Rental',
-    img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80',
+    img:'images.jpg',
     desc:'Finding a reliable tenant or a trustworthy landlord can be stressful. SOI Estates simplifies rental transactions for both sides. For tenants, we find properties matching your exact space, budget, and location requirements quickly and transparently. For landlords, we identify verified, reliable tenants and handle the agreement process professionally, ensuring your property is in safe hands.',
     highlight:{icon:'🤝', text:'"A good rental agreement protects both the landlord and the tenant. We draft clear, legally sound rental agreements and ensure both parties understand their rights and responsibilities fully."'},
     offer:['Residential flats & houses on rent','Commercial office & shop rentals','Furnished & semi-furnished options','Long-term lease agreements','Month-to-month flexible rentals','Tenant background verification','Rental agreement drafting','Property management for landlords'],
@@ -287,7 +288,7 @@ const propertyData = {
   },
   bank: {
     icon:'🏦', title:'Bank & Corporate Spaces', sub:'Bank Branches · ATMs · Corporate Offices · MNC Campuses',
-    img:'https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=900&q=80',
+    img:'images.jpg',
     desc:'Banks, NBFCs, insurance companies, and multinational corporations have unique requirements — ground floor visibility, specific square footage, power backup, parking, and regulatory compliance. SOI Estates has a proven track record of sourcing and delivering such specialised commercial spaces across Ludhiana and Pan India for leading financial institutions and corporate clients.',
     highlight:{icon:'🏛️', text:'"Banks and corporates cannot afford to be in the wrong location. We have successfully placed multiple banks, ATMs and corporate offices in high-footfall, regulation-compliant locations across Punjab."'},
     offer:['Bank branch spaces (ground floor)','ATM kiosk locations','NBFC & insurance office spaces','Corporate headquarters setups','Regional & zonal office spaces','Back-office & BPO spaces','Training & conference centres','Data centre & server room spaces'],
