@@ -15,22 +15,35 @@ function openMenu() {
   navToggle.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
 function closeMenu() {
   navLinks.classList.remove('open');
   navOverlay.classList.remove('open');
   navToggle.classList.remove('open');
   document.body.style.overflow = '';
 }
+
 function toggleMenu() {
   navLinks.classList.contains('open') ? closeMenu() : openMenu();
+}
+
+// Add event listener directly to toggle button if it exists
+if (navToggle) {
+  navToggle.addEventListener('click', toggleMenu);
 }
 
 // Close menu when overlay clicked
 navOverlay && navOverlay.addEventListener('click', closeMenu);
 
-// Close menu when any link clicked
+// Close menu when any link clicked (WITH MOBILE DELAY FIX)
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', closeMenu);
+  a.addEventListener('click', (e) => {
+    // Let the browser start processing the page change link first,
+    // then close the menu drawer safely right behind it.
+    setTimeout(() => {
+      closeMenu();
+    }, 200); 
+  });
 });
 
 // SCROLL REVEAL
