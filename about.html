@@ -3,54 +3,49 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About SOI Estates — Our Story Since 1992</title>
-  <meta name="description" content="SOI Estates — Ludhiana's trusted independent real estate firm since 1992. No builders. Only completed, owner-listed properties. Learn our story."/>
+  <title>About SOI Estates — Our Story & Team Since 1992</title>
+  <meta name="description" content="Meet the SOI Estates family — Parveen Soi, Sameer Soi & Rohan Soi. Trusted independent real estate since 1992, Ludhiana."/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .timeline { max-width:800px; margin:4rem auto 0; display:flex; flex-direction:column; gap:0; }
-    .tl-item { display:grid; grid-template-columns:80px 1fr; gap:2rem; padding-bottom:3rem; position:relative; }
-    .tl-item::before { content:''; position:absolute; left:39px; top:30px; bottom:0; width:2px; background:linear-gradient(to bottom,#B8860B,rgba(184,134,11,.1)); }
-    .tl-item:last-child::before { display:none; }
-    .tl-year { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:#B8860B; padding-top:.4rem; text-align:center; }
-    .tl-dot { width:16px; height:16px; border-radius:50%; background:#B8860B; border:3px solid #fff; box-shadow:0 0 0 2px #B8860B; margin:0 auto; margin-top:.5rem; }
-    .tl-content h3 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; color:#1F2937; margin-bottom:.5rem; }
-    .tl-content p { font-size:.82rem; line-height:1.85; color:#6B7280; }
-    .tl-left { display:flex; flex-direction:column; align-items:center; gap:.4rem; }
-
-    .values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
-    .value-card { background:#fff; border:1px solid rgba(0,0,0,.07); padding:2rem 1.5rem; text-align:center; border-top:3px solid #B8860B; }
-    .value-card-icon { font-size:2rem; margin-bottom:1rem; }
-    .value-card h3 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; color:#1F2937; margin-bottom:.5rem; }
-    .value-card p { font-size:.76rem; line-height:1.75; color:#6B7280; }
-
-    .promise-strip { background:#111827; padding:3rem 2rem; }
-    .promise-strip-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
-    .ps-item { text-align:center; padding:1.5rem 1rem; border:1px solid rgba(255,255,255,.07); }
-    .ps-num { font-family:'Playfair Display',serif; font-size:2.2rem; color:#D4A017; font-weight:700; line-height:1; }
-    .ps-label { font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-top:.4rem; }
-
-    .team-section { padding:5rem 2rem; background:#fafaf7; }
-    .team-content { max-width:800px; margin:0 auto; text-align:center; }
-    .team-content p { font-size:.9rem; line-height:1.9; color:#6B7280; margin-bottom:1.2rem; }
-
-    @media(max-width:1024px){ .values-grid{grid-template-columns:1fr 1fr;} .promise-strip-inner{grid-template-columns:1fr 1fr;} }
-    @media(max-width:600px){ .values-grid{grid-template-columns:1fr;} .promise-strip-inner{grid-template-columns:1fr 1fr;} .tl-item{grid-template-columns:60px 1fr; gap:1rem;} }
+    .timeline{max-width:800px;margin:4rem auto 0;display:flex;flex-direction:column;}
+    .tl-item{display:grid;grid-template-columns:80px 1fr;gap:2rem;padding-bottom:3rem;position:relative;}
+    .tl-item::before{content:'';position:absolute;left:39px;top:30px;bottom:0;width:2px;background:linear-gradient(to bottom,#B8860B,rgba(184,134,11,.1));}
+    .tl-item:last-child::before{display:none;}
+    .tl-left{display:flex;flex-direction:column;align-items:center;gap:.4rem;}
+    .tl-year{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#B8860B;text-align:center;}
+    .tl-dot{width:16px;height:16px;border-radius:50%;background:#B8860B;border:3px solid #fff;box-shadow:0 0 0 2px #B8860B;margin:0 auto;}
+    .tl-content h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:#1F2937;margin-bottom:.5rem;}
+    .tl-content p{font-size:.82rem;line-height:1.85;color:#6B7280;}
+    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+    .value-card{background:#fff;border:1px solid rgba(0,0,0,.07);padding:2rem 1.5rem;text-align:center;border-top:3px solid #B8860B;}
+    .value-card-icon{font-size:2rem;margin-bottom:1rem;}
+    .value-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:#1F2937;margin-bottom:.5rem;}
+    .value-card p{font-size:.76rem;line-height:1.75;color:#6B7280;}
+    .promise-strip{background:#111827;padding:2.5rem 2rem;}
+    .promise-strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+    .ps-item{text-align:center;padding:1.5rem 1rem;border:1px solid rgba(255,255,255,.07);}
+    .ps-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:#D4A017;font-weight:700;line-height:1;}
+    .ps-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.4rem;}
+    @media(max-width:1024px){.values-grid{grid-template-columns:1fr 1fr;}.promise-strip-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.values-grid{grid-template-columns:1fr;}.promise-strip-inner{grid-template-columns:1fr 1fr;}.tl-item{grid-template-columns:55px 1fr;gap:1rem;}}
   </style>
 </head>
 <body>
+
 <a href="https://wa.me/919855120177" target="_blank" class="wa-float"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.859L.057 23.428a.75.75 0 00.921.921l5.684-1.47A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.95-1.355l-.355-.212-3.676.95.977-3.574-.232-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg></a>
 
+<div class="nav-overlay" id="navOverlay"></div>
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="Soiestates.png" alt="SOI Estates"/></a>
-    <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="why-us.html">Why Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </div>
 </nav>
@@ -58,12 +53,11 @@
 <section class="page-hero">
   <div class="page-hero-content">
     <div class="section-tag">Est. 1992 · Ludhiana, Punjab</div>
-    <h1>Our <em>Story</em></h1>
-    <p>Three decades of honest, independent real estate — built on trust, not commissions.</p>
+    <h1>About <em>SOI Estates</em></h1>
+    <p>A family-run firm built on three decades of trust, honesty and results.</p>
   </div>
 </section>
 
-<!-- PROMISE STRIP -->
 <div class="promise-strip">
   <div class="promise-strip-inner">
     <div class="ps-item reveal"><div class="ps-num">30+</div><div class="ps-label">Years of Trust</div></div>
@@ -75,41 +69,91 @@
 
 <!-- WHO WE ARE -->
 <section class="section">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="about-two-col">
+  <div class="about-two-col">
     <div class="reveal">
       <div class="section-tag">Who We Are</div>
       <h2>Independent. Honest.<br><em>Always On Your Side.</em></h2>
       <p style="margin-bottom:1.2rem;">SOI Estates was established in 1992 in Ludhiana, Punjab, with one clear purpose — to be the real estate firm that people can truly trust. Not the one with the most builder tie-ups. Not the one pushing the most projects. The one that actually works for the client.</p>
-      <p style="margin-bottom:1.2rem;">We are not a franchise. We are not a startup. We are not a portal. We are an experienced, independent real estate firm that has operated in this market for over three decades — through every boom, every slowdown, and every change the sector has seen.</p>
-      <p>Our independence is our greatest strength. We have never signed an exclusivity agreement with a developer. We have never taken a builder's incentive. We earn by serving you well — and only that.</p>
+      <p style="margin-bottom:1.2rem;">We are a family-run firm — founded by <strong>Parveen Soi</strong> and now carried forward by his sons <strong>Sameer Soi</strong> and <strong>Rohan Soi</strong>. Three generations of the same family, the same values, and the same commitment to honest real estate.</p>
+      <p>We have never signed an exclusivity agreement with a developer. We have never taken a builder's incentive. We earn by serving you well — and only that.</p>
     </div>
     <div class="reveal">
-      <div class="section-tag">What Makes Us Different</div>
-      <h2>What We Will <em>Never Do</em></h2>
-      <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+      <div class="section-tag">What We Will Never Do</div>
+      <h2>Our <em>Commitments</em></h2>
+      <div style="display:flex;flex-direction:column;gap:.8rem;margin-top:1rem;">
         <div style="background:#fff8f0;border-left:3px solid #B8860B;padding:1rem 1.2rem;">
-          <div style="font-size:.75rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never push under-construction properties</div>
-          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">We only deal in fully completed, ready-to-possess, ready-to-register properties. Period.</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never push under-construction properties</div>
+          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">Only fully completed, ready-to-possess properties. Period.</div>
         </div>
         <div style="background:#fff8f0;border-left:3px solid #B8860B;padding:1rem 1.2rem;">
-          <div style="font-size:.75rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never list unauthorised or disputed properties</div>
-          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">Every property undergoes a full legal check before it reaches our clients — no exceptions.</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never list unauthorised properties</div>
+          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">Full legal check before any property reaches our clients.</div>
         </div>
         <div style="background:#fff8f0;border-left:3px solid #B8860B;padding:1rem 1.2rem;">
-          <div style="font-size:.75rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never sell builder or company inventory</div>
-          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">We help companies find property, but we never become an agent of their projects. We work for buyers, always.</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never sell builder or company inventory</div>
+          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">We help companies find property but never sell their projects to buyers.</div>
         </div>
         <div style="background:#fff8f0;border-left:3px solid #B8860B;padding:1rem 1.2rem;">
-          <div style="font-size:.75rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never hide the real price</div>
-          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">We tell you the true market value and negotiate your best deal — even if it means less brokerage for us.</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1F2937;margin-bottom:.3rem;">🚫 Never hide the real price</div>
+          <div style="font-size:.78rem;color:#6B7280;line-height:1.65;">We tell you the true market value and negotiate your best deal.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- MEET THE TEAM -->
+<section style="background:#fafaf7;padding:5rem 2rem;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:1rem;">
+      <div class="section-tag reveal" style="justify-content:center;">The People Behind SOI Estates</div>
+      <h2 class="reveal">Meet Our <em>Family</em></h2>
+      <p class="reveal" style="max-width:600px;margin:0 auto;">SOI Estates is not a company — it is a family. Three members of the Soi family work together every day to deliver honest, reliable real estate services to our clients.</p>
+    </div>
+    <div class="team-grid">
+
+      <!-- PARVEEN SOI -->
+      <div class="team-card reveal">
+        <div class="team-avatar">P</div>
+        <div class="team-name">Parveen Soi</div>
+        <div class="team-position">Founder & Owner · Est. 1992</div>
+        <div class="team-desc">The visionary behind SOI Estates. Parveen Soi founded the firm in 1992 with a single belief — honest real estate for every client. With over 30 years of experience in the Ludhiana property market, his guidance and deep market knowledge form the backbone of everything we do.</div>
+        <div class="team-contact">
+          <a href="tel:+919814650177">📞 +91 98146 50177</a>
+          <a href="https://wa.me/919814650177" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- SAMEER SOI -->
+      <div class="team-card reveal">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Sameer Soi</div>
+        <div class="team-position">Partner · Son of Parveen Soi</div>
+        <div class="team-desc">Sameer Soi brings energy, modern market knowledge and digital expertise to SOI Estates. Carrying forward his father's legacy, Sameer handles client relationships, property sourcing and ensures every deal meets the firm's strict standards of legal clarity and transparency.</div>
+        <div class="team-contact">
+          <a href="tel:+919855120177">📞 +91 98551 20177</a>
+          <a href="https://wa.me/919855120177" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- ROHAN SOI -->
+      <div class="team-card reveal">
+        <div class="team-avatar">R</div>
+        <div class="team-name">Rohan Soi</div>
+        <div class="team-position">Partner · Son of Parveen Soi</div>
+        <div class="team-desc">Rohan Soi is the operational heart of SOI Estates. With sharp attention to detail and a passion for connecting the right clients with the right properties, Rohan manages on-ground coordination, site visits and ensures every transaction is smooth from start to finish.</div>
+        <div class="team-contact">
+          <a href="tel:+917814632298">📞 +91 78146 32298</a>
+          <a href="https://wa.me/917814632298" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- TIMELINE -->
-<section style="padding:5rem 2rem;background:#fafaf7;">
+<section style="padding:5rem 2rem;background:#fff;">
   <div style="text-align:center;max-width:1200px;margin:0 auto;">
     <div class="section-tag reveal" style="justify-content:center;">Our Journey</div>
     <h2 class="reveal">Three Decades of <em>Building Trust</em></h2>
@@ -117,46 +161,45 @@
   <div class="timeline">
     <div class="tl-item reveal">
       <div class="tl-left"><div class="tl-year">1992</div><div class="tl-dot"></div></div>
-      <div class="tl-content"><h3>Founded in Ludhiana, Punjab</h3><p>SOI Estates opens its doors in Ludhiana with a simple mission — to offer honest, transparent real estate services to families and businesses in Punjab. Our first office is set up near Hambran Road, the same area we still proudly serve today.</p></div>
+      <div class="tl-content"><h3>Founded in Ludhiana by Parveen Soi</h3><p>SOI Estates opens its doors on Hambran Road, Ludhiana with a simple mission — honest, transparent real estate for families and businesses in Punjab.</p></div>
     </div>
     <div class="tl-item reveal">
-      <div class="tl-left"><div class="tl-year">Late 1990s</div><div class="tl-dot"></div></div>
-      <div class="tl-content"><h3>Building a Reputation for Honesty</h3><p>Through word of mouth alone, SOI Estates becomes known as the agency that never pushes clients into bad deals. Our refusal to work with builders or list unauthorised properties begins setting us apart in a crowded market.</p></div>
+      <div class="tl-left"><div class="tl-year">1990s</div><div class="tl-dot"></div></div>
+      <div class="tl-content"><h3>Building a Reputation for Honesty</h3><p>Through word of mouth alone, SOI Estates becomes known as the agency that never pushes bad deals. The firm's refusal to work with builders starts setting it apart.</p></div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-left"><div class="tl-year">2000s</div><div class="tl-dot"></div></div>
-      <div class="tl-content"><h3>Expanding Across Property Types</h3><p>Responding to client demand, SOI Estates expands from residential into commercial, industrial, agricultural and investment properties — while maintaining the same strict standards of legal verification and client-first service for every category.</p></div>
+      <div class="tl-content"><h3>Expanding Across Property Types</h3><p>SOI Estates expands into commercial, industrial, agricultural and investment properties while maintaining the same strict legal verification standards.</p></div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-left"><div class="tl-year">2010s</div><div class="tl-dot"></div></div>
-      <div class="tl-content"><h3>Going Pan India</h3><p>Our network grows beyond Punjab. Clients across India — including NRIs — begin seeking our expertise for property transactions in multiple cities and states. SOI Estates becomes a Pan India firm while keeping its Ludhiana roots and values intact.</p></div>
+      <div class="tl-content"><h3>Second Generation Joins — Pan India Growth</h3><p>Sameer Soi and Rohan Soi join the family business, bringing fresh energy and modern expertise. SOI Estates expands its reach across Pan India.</p></div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-left"><div class="tl-year">2020s</div><div class="tl-dot"></div></div>
-      <div class="tl-content"><h3>30+ Years Strong — and Growing</h3><p>Over a thousand families served. Zero builder tie-ups. Still family-run. Still independent. SOI Estates enters its fourth decade with the same commitment that started it — finding you the right property, every single time.</p></div>
+      <div class="tl-content"><h3>30+ Years Strong — Three Together</h3><p>Parveen, Sameer and Rohan Soi continue building the legacy together. Over 1000 families served. Zero builder tie-ups. The most trusted name in Ludhiana real estate.</p></div>
     </div>
   </div>
 </section>
 
 <!-- VALUES -->
-<section class="section">
-  <div style="text-align:center;max-width:1200px;margin:0 auto;">
+<section class="section" style="background:#fafaf7;max-width:100%;padding:4rem 2rem;">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;">
     <div class="section-tag reveal" style="justify-content:center;">What We Stand For</div>
     <h2 class="reveal">Our Core <em>Values</em></h2>
   </div>
-  <div class="values-grid">
-    <div class="value-card reveal"><div class="value-card-icon">⚖️</div><h3>Integrity</h3><p>We tell you the truth even when it's not what you want to hear. Honest advice has built our 30-year reputation.</p></div>
-    <div class="value-card reveal"><div class="value-card-icon">🔍</div><h3>Transparency</h3><p>No hidden charges. No fine print surprises. Every fee, every process, every detail — explained to you clearly upfront.</p></div>
-    <div class="value-card reveal"><div class="value-card-icon">🤝</div><h3>Independence</h3><p>We work for you — not for builders, not for companies, not for developers. Your interest is the only interest we serve.</p></div>
-    <div class="value-card reveal"><div class="value-card-icon">📋</div><h3>Diligence</h3><p>We verify every document, check every approval, and confirm every detail before presenting any property to a client.</p></div>
+  <div class="values-grid" style="max-width:1200px;margin:0 auto;">
+    <div class="value-card reveal"><div class="value-card-icon">⚖️</div><h3>Integrity</h3><p>We tell you the truth even when it's not what you want to hear.</p></div>
+    <div class="value-card reveal"><div class="value-card-icon">🔍</div><h3>Transparency</h3><p>No hidden charges. No surprises. Every detail explained upfront.</p></div>
+    <div class="value-card reveal"><div class="value-card-icon">🤝</div><h3>Independence</h3><p>We work for you — not builders, companies or developers.</p></div>
+    <div class="value-card reveal"><div class="value-card-icon">👨‍👦‍👦</div><h3>Family Values</h3><p>A family business since 1992 — your trust is our family legacy.</p></div>
   </div>
 </section>
 
-<!-- CTA -->
 <div style="background:#111827;padding:4rem 2rem;text-align:center;">
   <div class="section-tag reveal" style="color:#D4A017;justify-content:center;">Start Your Journey</div>
   <h2 style="color:#fff;font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;margin-bottom:.8rem;" class="reveal">Ready to Work with an <em>Honest Firm?</em></h2>
-  <p style="color:rgba(255,255,255,.5);font-size:.88rem;margin-bottom:2rem;" class="reveal">Call us, WhatsApp us or send an email — we respond to every single enquiry.</p>
+  <p style="color:rgba(255,255,255,.5);font-size:.88rem;margin-bottom:2rem;" class="reveal">Call us, WhatsApp us or visit our Ludhiana office. We respond to every enquiry personally.</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
     <a href="https://wa.me/919855120177" target="_blank" class="btn-primary">💬 WhatsApp Now</a>
     <a href="contact.html" class="btn-outline">Send Enquiry →</a>
@@ -169,6 +212,12 @@
       <img src="Soiestates.png" alt="SOI Estates" class="footer-logo"/>
       <p>Helping you find the right property every time!</p>
       <p style="margin-top:.5rem;font-size:.7rem;color:rgba(255,255,255,.3);">Independent · Est. 1992 · Ludhiana</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/soirealestates/" target="_blank">ig</a>
+        <a href="https://www.facebook.com/profile.php?id=61579648694526" target="_blank">fb</a>
+        <a href="https://www.linkedin.com/company/soi-estates/" target="_blank">in</a>
+        <a href="https://youtube.com/@sameersoi_ldh" target="_blank">yt</a>
+      </div>
     </div>
     <div class="footer-links-col">
       <h4>Pages</h4>
@@ -176,14 +225,23 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="why-us.html">Why SOI Estates</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-col">
+      <h4>Our Team</h4>
+      <ul>
+        <li><a href="tel:+919814650177">Parveen Soi</a></li>
+        <li><a href="tel:+919855120177">Sameer Soi</a></li>
+        <li><a href="tel:+917814632298">Rohan Soi</a></li>
       </ul>
     </div>
     <div class="footer-contact-col">
       <h4>Contact Us</h4>
+      <p>📞 <a href="tel:+919814650177">+91 98146 50177</a></p>
       <p>📞 <a href="tel:+919855120177">+91 98551 20177</a></p>
-      <p>💬 <a href="https://wa.me/919855120177" target="_blank">WhatsApp Us</a></p>
+      <p>📞 <a href="tel:+917814632298">+91 78146 32298</a></p>
       <p>✉️ <a href="mailto:soiestatesldh@gmail.com">soiestatesldh@gmail.com</a></p>
       <p>📍 Mahaveer Jain Colony Part-1,<br>Near Sai Mandir, Hambran Road,<br>Ludhiana, Punjab</p>
     </div>
