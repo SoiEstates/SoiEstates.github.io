@@ -4,12 +4,33 @@ window.addEventListener('scroll', () => {
   navbar && (window.scrollY > 40 ? navbar.classList.add('scrolled') : navbar.classList.remove('scrolled'));
 });
 
-// MOBILE MENU
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
+// MOBILE MENU - SLIDE FROM LEFT
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+
+function openMenu() {
+  navLinks.classList.add('open');
+  navOverlay.classList.add('open');
+  navToggle.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
+function closeMenu() {
+  navLinks.classList.remove('open');
+  navOverlay.classList.remove('open');
+  navToggle.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function toggleMenu() {
+  navLinks.classList.contains('open') ? closeMenu() : openMenu();
+}
+
+// Close menu when overlay clicked
+navOverlay && navOverlay.addEventListener('click', closeMenu);
+
+// Close menu when any link clicked
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  a.addEventListener('click', closeMenu);
 });
 
 // SCROLL REVEAL
