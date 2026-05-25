@@ -4,7 +4,7 @@ window.addEventListener('scroll', () => {
   navbar && (window.scrollY > 40 ? navbar.classList.add('scrolled') : navbar.classList.remove('scrolled'));
 });
 
-// MOBILE MENU - SLIDE FROM LEFT
+// MOBILE MENU
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 const navOverlay = document.getElementById('navOverlay');
@@ -15,35 +15,23 @@ function openMenu() {
   navToggle.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeMenu() {
   navLinks.classList.remove('open');
   navOverlay.classList.remove('open');
   navToggle.classList.remove('open');
   document.body.style.overflow = '';
 }
-
 function toggleMenu() {
   navLinks.classList.contains('open') ? closeMenu() : openMenu();
 }
 
-// Add event listener directly to toggle button if it exists
-if (navToggle) {
-  navToggle.addEventListener('click', toggleMenu);
-}
+// ✅ THIS LINE IS CRITICAL — do not remove it
+navToggle && navToggle.addEventListener('click', toggleMenu);
 
-// Close menu when overlay clicked
 navOverlay && navOverlay.addEventListener('click', closeMenu);
 
-// Close menu when any link clicked (WITH MOBILE DELAY FIX)
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', (e) => {
-    // Let the browser start processing the page change link first,
-    // then close the menu drawer safely right behind it.
-    setTimeout(() => {
-      closeMenu();
-    }, 200); 
-  });
+  a.addEventListener('click', () => setTimeout(closeMenu, 150));
 });
 
 // SCROLL REVEAL
@@ -57,7 +45,7 @@ const ro = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-// CONTACT FORM (Formspree AJAX)
+// CONTACT FORM
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', async function(e) {
