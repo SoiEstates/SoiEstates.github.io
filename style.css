@@ -15,7 +15,7 @@ p{font-size:.9rem;line-height:1.85;color:var(--muted);}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
 nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.09);}
-.nav-inner{max-width:1200px;margin:0 auto;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo img{height:50px;width:auto;object-fit:contain;}
 
 /* NAV LINKS - DESKTOP & MOBILE BOTH VISIBLE */
