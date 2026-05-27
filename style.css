@@ -32,8 +32,8 @@ nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.09);}
 @media(max-width:768px){
   .nav-inner{padding:.7rem 1rem;justify-content:space-between;}
   .nav-logo img{height:38px;}
-  .nav-links{gap:.8rem;}
-  .nav-links a{font-size:.68rem;letter-spacing:.06em;}
+  .nav-links{gap:.7rem;}
+  .nav-links a{font-size:.58rem;letter-spacing:.05em;}
 }
 
 @media(max-width:400px){
